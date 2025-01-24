@@ -19,7 +19,7 @@ export default defineConfig({
     siteTitle: false,
     nav: [
       { text: 'Getting Started', link: '/start_what_is_logica/' },
-      { text: 'User Guide', link: '/usrguide_basics/' },
+      { text: 'User Guide', link: '/usrguide_basic/' },
       { text: 'Examples', link: '/examples/' },
       { text: 'API', link: '/api/' },
       { text: 'Community', link: '/community/' }
