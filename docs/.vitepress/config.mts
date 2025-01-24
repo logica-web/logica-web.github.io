@@ -34,15 +34,16 @@ export default defineConfig({
           items: [
             { text: 'What is Logica', link: '/start_what_is_logica/' },
             { text: 'Why is Logica', link: '/start_why_is_logica/' },
+            { text: 'Logica Installation', link: '/start_installation/' },
+            { text: 'Logica Quickstart', link: '/start_quickstart/' },
           ]
         },
         {
           text: 'User Guide',
           collapsed: false,
           items: [
-            { text: 'Installation', link: '/usrguide_installation/' },
+            { text: 'Logica Basic', link: '/usrguide_basic/' },
             { text: 'Query Engines', link: '/usrguide_engines/' },
-            { text: 'Notebook Support', link: '/usrguide_notebook/' },
           ]
         },
         { text: 'Examples', link: '/examples/' },
