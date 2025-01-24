@@ -10,14 +10,14 @@ hero:
     src: /max_flow.png
   actions:
     - theme: brand
+      text: Getting Started
+      link: /start_what_is_logica
+    - theme: alt
       text: 🏈 Play Ground
       link: https://logica.dev/sandbox.html
     - theme: alt
-      text: Introduction
-      link: /introduction
-    - theme: alt
       text: User Guide
-      link: /user_guide
+      link: /usrguide_basic
 
 
 features:

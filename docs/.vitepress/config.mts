@@ -18,7 +18,7 @@ export default defineConfig({
     },
     siteTitle: false,
     nav: [
-      { text: 'Getting Started', link: '/intro_what_is_logica/' },
+      { text: 'Getting Started', link: '/start_what_is_logica/' },
       { text: 'User Guide', link: '/usrguide_installation/' },
       { text: 'Examples', link: '/examples/' },
       { text: 'API', link: '/api/' },
@@ -32,8 +32,8 @@ export default defineConfig({
           text: 'Getting Started',
           collapsed: false,
           items: [
-            { text: 'What is Logica', link: '/intro_what_is_logica/' },
-            { text: 'Why is Logica', link: '/intro_why_is_logica/' },
+            { text: 'What is Logica', link: '/start_what_is_logica/' },
+            { text: 'Why is Logica', link: '/start_why_is_logica/' },
           ]
         },
         {
