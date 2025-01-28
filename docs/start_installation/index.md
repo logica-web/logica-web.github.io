@@ -4,7 +4,7 @@ outline: deep
 
 # Installation
 
-## Pip
+## Using pip
 
 Logica can be installed by using pip.
 
@@ -33,8 +33,8 @@ cd logica
 ./logica - print Greet <<<'Greet(greeting: "Hello world!")'
 ```
 
-<!-- ## Online PlayGround
+## Online PlayGround
 
 In addition, you can explore Logica using our online playground and start experimenting right away.
 
-[🏈 Play Ground](https://logica.dev/sandbox.html) -->
+[🏈 Play Ground](https://logica.dev/sandbox.html)

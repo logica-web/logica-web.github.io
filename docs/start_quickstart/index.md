@@ -2,14 +2,13 @@
 outline: deep
 ---
 
-# Notebook
+# Quickstart
 
-In addition to running in a terminal, Logica seamlessly integrates with Jupyter Notebooks and Google Colab, offering state-of-the-art environments for data analysis.
+Logica integrates effortlessly with Jupyter Notebooks and Google Colab, providing cutting-edge platforms for data analysis. In the following example, we'll explore a simple Datalog program to get you started.
 
 ## Package Import
 
 ``` python
-from google.colab import auth
 from logica import colab_logica
 ```
 
@@ -23,3 +22,9 @@ For example, to write a "Hello, World!" program in a Notebook, you can use:
 @Engine("sqlite");
 Greeting("Hello World!");
 ```
+
+## Result Interpretation
+With such script, you can get the followings
+<iframe src="/quickstart_result_interpret.html" width="100%" height="280px" frameborder="0.3"></iframe>
+
+Okie, now we have several things to learn about

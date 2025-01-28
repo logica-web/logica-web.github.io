@@ -53,9 +53,9 @@ export default defineConfig({
       // examples
       '/examples/': [
         {
-          text: 'PageRank',
+          text: 'Examples',
           items: [
-            { text: 'Example', link: '/examples' },
+            { text: 'PageRank', link: '/examples' },
           ]
         },
       ],
