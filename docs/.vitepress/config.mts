@@ -18,8 +18,8 @@ export default defineConfig({
     },
     siteTitle: false,
     nav: [
-      { text: 'Getting Started', link: '/start_what_is_logica/' },
-      { text: 'User Guide', link: '/usrguide_basic/' },
+      { text: 'Getting Started', link: '/start-what-is-logica/' },
+      { text: 'User Guide', link: '/usrguide-basic/' },
       { text: 'Examples', link: '/examples/' },
       { text: 'API', link: '/api/' },
       { text: 'Community', link: '/community/' }
@@ -32,18 +32,18 @@ export default defineConfig({
           text: 'Getting Started',
           collapsed: false,
           items: [
-            { text: 'What is Logica', link: '/start_what_is_logica/' },
-            { text: 'Why is Logica', link: '/start_why_is_logica/' },
-            { text: 'Logica Installation', link: '/start_installation/' },
-            { text: 'Logica Quickstart', link: '/start_quickstart/' },
+            { text: 'What is Logica', link: '/start-what-is-logica/' },
+            { text: 'Why is Logica', link: '/start-why-is-logica/' },
+            { text: 'Logica Installation', link: '/start-installation/' },
+            { text: 'Logica Quickstart', link: '/start-quickstart/' },
           ]
         },
         {
           text: 'User Guide',
           collapsed: false,
           items: [
-            { text: 'Logica Basic', link: '/usrguide_basic/' },
-            { text: 'Query Engines', link: '/usrguide_engines/' },
+            { text: 'Logica Basic', link: '/usrguide-basic/' },
+            { text: 'Query Engines', link: '/usrguide-engines/' },
           ]
         },
         { text: 'Examples', link: '/examples/' },
