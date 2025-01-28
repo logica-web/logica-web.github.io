@@ -17,7 +17,7 @@ Logica uses Magic Cells in Notebooks to support its Datalog-like syntax. To enab
 
 For example, to write a "Hello, World!" program in a Notebook, you can use:
 
-```notebook
+```
 %%logica Greeting
 @Engine("sqlite");
 Greeting("Hello World!");
