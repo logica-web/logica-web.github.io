@@ -11,13 +11,13 @@ hero:
   actions:
     - theme: brand
       text: Getting Started
-      link: /start_what_is_logica
+      link: /start-what-is-logica
     - theme: alt
       text: 🏈 Play Ground
       link: https://logica.dev/sandbox.html
     - theme: alt
       text: User Guide
-      link: /usrguide_basic
+      link: /usrguide-basic
 
 
 features:
