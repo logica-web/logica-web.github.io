@@ -65,8 +65,8 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Aggregation', link: '/usrguide-basic/aggregation' },
-            { text: 'Function', link: '/usrguide-basic/function' },
             { text: 'Computation', link: '/usrguide-basic/computation' },
+            { text: 'Boolean Logic', link: '/usrguide-basic/boolean-logic' },
             { text: 'Functional Notation', link: '/usrguide-basic/notation' },
             { text: 'Recursion', link: '/usrguide-basic/recursion' },
             { text: 'Functors', link: '/usrguide-basic/functors' },
