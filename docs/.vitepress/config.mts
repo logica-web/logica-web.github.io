@@ -30,7 +30,6 @@ export default defineConfig({
       '/': [
         {
           text: 'Getting Started',
-          collapsed: false,
           items: [
             { text: 'What is Logica', link: '/start-what-is-logica/' },
             { text: 'Why is Logica', link: '/start-why-is-logica/' },
@@ -38,16 +37,41 @@ export default defineConfig({
             { text: 'Logica Quickstart', link: '/start-quickstart/' },
           ]
         },
+      ],
+      '/usrguide-basic/': [
         {
           text: 'User Guide',
           collapsed: false,
           items: [
-            { text: 'Logica Basic', link: '/usrguide-basic/' },
-            { text: 'Query Engines', link: '/usrguide-engines/' },
+            { text: 'Overview', link: '/usrguide-basic/' },
           ]
         },
-        { text: 'Examples', link: '/examples/' },
-        { text: 'API Reference', link: '/api/' },
+        {
+          text: 'Logica Basic',
+          collapsed: false,
+          items: [
+            { text: 'Query Engine', link: '/usrguide-basic/query-engine' },
+            { text: 'Predicates', link: '/usrguide-basic/predicates' },
+            { text: 'Facts', link: '/usrguide-basic/facts' },
+            { text: 'Rules', link: '/usrguide-basic/rules' },
+            { text: 'Build-In Operators', link: '/usrguide-basic/built-in-operators' },
+            { text: 'Named Arguments', link: '/usrguide-basic/named-arguments' },
+            { text: 'Data Types', link: '/usrguide-basic/data-types' },
+            { text: 'Multiset Semantics', link: '/usrguide-basic/multi-semantics' },
+          ]
+        },
+        {
+          text: 'Logica Advanced',
+          collapsed: false,
+          items: [
+            { text: 'Aggregation', link: '/usrguide-basic/aggregation' },
+            { text: 'Function', link: '/usrguide-basic/function' },
+            { text: 'Computation', link: '/usrguide-basic/computation' },
+            { text: 'Functional Notation', link: '/usrguide-basic/notation' },
+            { text: 'Recursion', link: '/usrguide-basic/recursion' },
+            { text: 'Functors', link: '/usrguide-basic/functors' },
+          ]
+        },
       ],
 
       // examples
