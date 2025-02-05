@@ -18,8 +18,8 @@ export default defineConfig({
     },
     siteTitle: false,
     nav: [
-      { text: 'Getting Started', link: '/start-what-is-logica/' },
-      { text: 'User Guide', link: '/usrguide-basic/' },
+      { text: 'Getting Started', link: '/start/' },
+      { text: 'User Guide', link: '/usrguide/' },
       { text: 'Examples', link: '/examples/' },
       { text: 'API', link: '/api/' },
       { text: 'Community', link: '/community/' }
@@ -31,45 +31,52 @@ export default defineConfig({
         {
           text: 'Getting Started',
           items: [
-            { text: 'What is Logica', link: '/start-what-is-logica/' },
-            { text: 'Why is Logica', link: '/start-why-is-logica/' },
-            { text: 'Logica Installation', link: '/start-installation/' },
-            { text: 'Logica Quickstart', link: '/start-quickstart/' },
+            { text: 'What is Logica', link: '/start/' },
+            { text: 'Why is Logica', link: '/start/start-why-is-logica/' },
+            { text: 'Logica Installation', link: '/start/start-installation/' },
           ]
         },
       ],
-      '/usrguide-basic/': [
+      '/usrguide/': [
         {
           text: 'User Guide',
           collapsed: false,
           items: [
-            { text: 'Overview', link: '/usrguide-basic/' },
+            { text: 'Overview', link: '/usrguide/' },
           ]
         },
         {
           text: 'Logica Basic',
           collapsed: false,
           items: [
-            { text: 'Query Engine', link: '/usrguide-basic/query-engine' },
-            { text: 'Predicates', link: '/usrguide-basic/predicates' },
-            { text: 'Facts', link: '/usrguide-basic/facts' },
-            { text: 'Rules', link: '/usrguide-basic/rules' },
-            { text: 'Build-In Operators', link: '/usrguide-basic/built-in-operators' },
-            { text: 'Named Arguments', link: '/usrguide-basic/named-arguments' },
-            { text: 'Data Types', link: '/usrguide-basic/data-types' },
-            { text: 'Multiset Semantics', link: '/usrguide-basic/multi-semantics' },
+            { text: 'Query Engine', link: '/usrguide/query-engine' },
+            { text: 'Run in Terminal', link: '/usrguide/run-in-terminal' },
+            { text: 'Run in Notebook', link: '/usrguide/run-in-notebook' },
+          ]
+        },
+        {
+          text: 'Logica Basic',
+          collapsed: false,
+          items: [
+            { text: 'Facts', link: '/usrguide/facts' },
+            { text: 'Predicates', link: '/usrguide/predicates' },
+            { text: 'Rules', link: '/usrguide/rules' },
+            { text: 'Build-In Operators', link: '/usrguide/built-in-operators' },
+            { text: 'Named Arguments', link: '/usrguide/named-arguments' },
+            { text: 'Data Types', link: '/usrguide/data-types' },
+            { text: 'Multiset Semantics', link: '/usrguide/multi-semantics' },
           ]
         },
         {
           text: 'Logica Advanced',
           collapsed: false,
           items: [
-            { text: 'Aggregation', link: '/usrguide-basic/aggregation' },
-            { text: 'Computation', link: '/usrguide-basic/computation' },
-            { text: 'Boolean Logic', link: '/usrguide-basic/boolean-logic' },
-            { text: 'Functional Notation', link: '/usrguide-basic/notation' },
-            { text: 'Recursion', link: '/usrguide-basic/recursion' },
-            { text: 'Functors', link: '/usrguide-basic/functors' },
+            { text: 'Aggregation', link: '/usrguide/aggregation' },
+            { text: 'Computation', link: '/usrguide/computation' },
+            { text: 'Boolean Logic', link: '/usrguide/boolean-logic' },
+            { text: 'Functional Notation', link: '/usrguide/notation' },
+            { text: 'Recursion', link: '/usrguide/recursion' },
+            { text: 'Functors', link: '/usrguide/functors' },
           ]
         },
       ],
