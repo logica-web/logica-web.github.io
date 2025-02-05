@@ -34,33 +34,25 @@ export default defineConfig({
             { text: 'What is Logica', link: '/start-what-is-logica/' },
             { text: 'Why is Logica', link: '/start-why-is-logica/' },
             { text: 'Logica Installation', link: '/start-installation/' },
-            // { text: 'Logica Quickstart', link: '/start-quickstart/' },
+            { text: 'Logica Quickstart', link: '/start-quickstart/' },
           ]
         },
       ],
       '/usrguide-basic/': [
         {
           text: 'User Guide',
-          // collapsed: false,
-          items: [
-            { text: 'Overview', link: '/usrguide-basic/' },
-          ]
-        },
-        {
-          text: 'Logica Execution',
           collapsed: false,
           items: [
-            { text: 'Query Engines', link: '/usrguide-basic/query-engine' },
-            { text: 'Run in Terminal', link: '/usrguide-basic/run-in-terminal' },
-            { text: 'Run in Notebook', link: '/usrguide-basic/run-in-notebook' },
+            { text: 'Overview', link: '/usrguide-basic/' },
           ]
         },
         {
           text: 'Logica Basic',
           collapsed: false,
           items: [
-            { text: 'Facts', link: '/usrguide-basic/facts' },
+            { text: 'Query Engine', link: '/usrguide-basic/query-engine' },
             { text: 'Predicates', link: '/usrguide-basic/predicates' },
+            { text: 'Facts', link: '/usrguide-basic/facts' },
             { text: 'Rules', link: '/usrguide-basic/rules' },
             { text: 'Build-In Operators', link: '/usrguide-basic/built-in-operators' },
             { text: 'Named Arguments', link: '/usrguide-basic/named-arguments' },
@@ -72,12 +64,12 @@ export default defineConfig({
           text: 'Logica Advanced',
           collapsed: false,
           items: [
-            { text: 'Aggregation', link: '/usrguide-advanced/aggregation' },
-            { text: 'Computation', link: '/usrguide-advanced/computation' },
-            { text: 'Boolean Logic', link: '/usrguide-advanced/boolean-logic' },
-            { text: 'Functional Notation', link: '/usrguide-advanced/notation' },
-            { text: 'Recursion', link: '/usrguide-advanced/recursion' },
-            { text: 'Functors', link: '/usrguide-advanced/functors' },
+            { text: 'Aggregation', link: '/usrguide-basic/aggregation' },
+            { text: 'Computation', link: '/usrguide-basic/computation' },
+            { text: 'Boolean Logic', link: '/usrguide-basic/boolean-logic' },
+            { text: 'Functional Notation', link: '/usrguide-basic/notation' },
+            { text: 'Recursion', link: '/usrguide-basic/recursion' },
+            { text: 'Functors', link: '/usrguide-basic/functors' },
           ]
         },
       ],
