@@ -1,15 +1,11 @@
 ---
 outline: deep
 ---
-# Execution on SQL engines
+# Query Engines
 
-Logica is native to SQL ecosystem, it is designed to compile to SQL and run on data
-that customer already has in their database. As of May 2024 Logica runs on BigQuery, SQLite and PostgreSQL.
-In this guide we will be using SQLite. It is a highly efficient free database that is onmipresent
-and in particular is part of Python standard library.
+Logica is native to the SQL ecosystem; it is designed to compile to SQL and run on data that customers already have in their databases. As of January 2025, Logica runs on DuckDB, Google BigQuery, SQLite, and PostgreSQL. In this guide, we will be using SQLite, a highly efficient, free database that is omnipresent and part of the Python standard library.
 
-To specify that you would like to run your Logica program in SQLite include line `@Engine("sqlite");`
-in your program. For example you could write.
+To specify that you would like to run your Logica program in SQLite, include the line `@Engine("sqlite");` in your program. For example, you could write the following into file `socrates.l` :
 
 ```
 @Engine("sqlite");
@@ -17,18 +13,20 @@ Human("Socrates");
 Mortal(x) :- Human(x);
 ```
 
-Now you can find out who is mortal with command
+Now you can find out who is mortal with the command:
 
 ```
 $ logica socrates.l run Mortal
 ```
 
-and it will run with built-in SQLite engine.
+and it will run with the built-in SQLite engine.
 
-The line `@Engine("sqlite");` that you have added looks like a fact and it is. The predicate here is `@Engine`.
-Special predicates that start with `@Engine` are called _imperatives_. The predicates are used to
-command to the Logica engine on what to do.
+The line `@Engine("sqlite");` that you have added looks like a fact, and it is. The predicate here is `@Engine`. Special predicates that start with `@Engine` are called _imperatives_. These predicates are used to command the Logica engine on what to do.
 
+:::tip
+If you are not familiar with predicates, facts, or rules, no worries, we will walk you through the concepts one by one.
+:::
+<!-- 
 ## Connecting and reading from database
 
 By default when running on SQLite Logica connects to in-memory database. If you want to connect to an existing
@@ -90,4 +88,4 @@ asked to print it directly.
 > Workflow() += 1 :- A() | B() | C();
 > ```
 >
-> and run `python3 -m logica my_workflow.l run Workflow`.
+> and run `python3 -m logica my_workflow.l run Workflow`. -->

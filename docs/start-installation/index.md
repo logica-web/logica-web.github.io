@@ -17,12 +17,15 @@ With the package installed, users can directly use Logica in terminal
 logica - print Greet <<<'Greet(greeting: "Hello world!")'
 ```
 
-:::info
+<!-- :::info
 You will get the following 
 ```
 SELECT
   "Hello world!" AS greeting;
 ```
+::: -->
+:::tip
+To learn how to use it in a notebook or execute other commands in the terminal, refer to the Logica Execution under User Guide .
 :::
 
 ## Development
