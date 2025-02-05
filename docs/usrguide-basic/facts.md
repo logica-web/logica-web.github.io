@@ -3,7 +3,7 @@ outline: deep
 ---
 # Facts
 
-In Logica, a fact is a fundamental assertion about the world that is always true. Facts are the simplest form of logical statements and serve as the foundation for reasoning in a logic program. They consist of predicates applied to constant values, representing known relationships or properties.
+In Logica, a fact is a fundamental assertion about the world. Facts are the simplest form of logical statements and serve as the foundation for reasoning in a logic program. They consist of predicates applied to constant values, representing known relationships or properties.
 
 A more familiar term for facts is inputs. Essentially, if we want to use logic programming scripts to query or reason over a given dataset, the provided inputs serve as the facts.
 

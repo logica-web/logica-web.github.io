@@ -14,6 +14,12 @@ npm install vitepress --save-dev
 npm run docs:dev
 ```
 
+Before push
+```
+npm run docs:build
+npm run docs:preview
+```
+
 ### Rendering Existing Notebook
 ```bash
 jupyter nbconvert %target%.ipynb --to html --template=lab
