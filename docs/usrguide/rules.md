@@ -3,31 +3,44 @@ outline: deep
 ---
 
 # Rules
-Rules can specify how to derive new facts from known ones. These rules rules of derivation are called _implications_.
 
-Implication has form: `<conclusion> :- <condition>`.
+## Overview
 
-Implications state conditions under which a predicate holds for a tuple of values given that some predicates already hold for come tuples of values.
+In logic programming, rules define how new facts can be inferred from existing ones. These rules are called _implications_ because they specify the conditions under which a certain fact holds based on other known facts.
 
-Example 1: To state "X is grandparent of Z if X is a parent of parent of Z." in Logica we would write:
+A rule follows this general format:
+
+```
+<conclusion> :- <condition>;
+```
+- The head (on the left of :- ) represents the conclusion—the new fact being inferred.
+- The body (on the right of :- ) lists the conditions that must be met for the conclusion to hold.
+
+This syntax is read as:
+
+>The conclusion holds if the conditions in the body hold.
+
+## Example Rules
+
+**Example 1**: To state "X is the grandparent of Z if X is the parent of the parent of Z" in Logica, we would write:
 
 ```
 Grandparent(x, z) :- Parent(x, y), Parent(y, z);
 ```
 
-Example 2: To state "X is quadropod if it has 4 legs" in Logica we would write:
+**Example 2**: To state "X is a quadruped if it has 4 legs" in Logica, we would write:
 
 ```
-Quadropod(x) :- NumLegs(x, 4);
+Quadruped(x) :- NumLegs(x, 4);
 ```
 
-Example 3: x is sibling of y if they are children of the same parent.
+**Example 3**: X is a sibling of Y if they are children of the same parent.
 
 ```
 Sibling(x, y) :- Parent(z, x), Parent(z, y);
 ```
 
-Example 4: x is close relative of y if x is a parent, a child, or a sibling of y.
+**Example 4**: X is a close relative of Y if X is a parent, a child, or a sibling of Y.
 
 ```
 CloseRelative(x, y) :-
@@ -36,19 +49,18 @@ CloseRelative(x, y) :-
   (Parent(z, x), Parent(z, y));
 ```
 
-Multiple rules for a predicate are allowed. Multiple rules are equivalent to a single rule which body is disjunction of bodies of those.
+:::tip
+Logica use `|` to indicate "OR"
+:::
 
-Example 5. Equivalent to _Example 4_.
-"`x` is close relative of `y` if `x` is parent of `y`. `x` is close relative of `y` if `x` is child of `y`.
-`x` is close relative of `y` if `x` is a sibling of `y`."
+Multiple rules for a predicate are also allowed. This means that you can define a predicate with several rules, and it is equivalent to a single rule whose body is the disjunction (logical OR) of the bodies of those rules.
+
+**Example 5**: Equivalent to _Example 4_.
+"X is a close relative of Y if X is the parent of Y. X is a close relative of Y if X is the child of Y.
+X is a close relative of Y if X is a sibling of Y."
 
 ```
 CloseRelative(x, y) :- Parent(x, y);
 CloseRelative(x, y) :- Parent(y, x);
 CloseRelative(x, y) :- Parent(z, x), Parent(z, y);
 ```
-
-> [!NOTE]
->  Logica is case-sensitive and case is used for semantics:
-> Variables are to be latin lower_case: `x`, `y`, `my_variable`.
-> Predicates are to be CamelCase starting with capital: `P`, `Q`, `MyPredicate`

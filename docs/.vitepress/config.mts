@@ -46,7 +46,7 @@ export default defineConfig({
           ]
         },
         {
-          text: 'Logica Basic',
+          text: 'Logica Execution',
           collapsed: false,
           items: [
             { text: 'Query Engine', link: '/usrguide/query-engine' },
@@ -59,10 +59,9 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Facts', link: '/usrguide/facts' },
-            { text: 'Predicates', link: '/usrguide/predicates' },
             { text: 'Rules', link: '/usrguide/rules' },
-            { text: 'Build-In Operators', link: '/usrguide/built-in-operators' },
             { text: 'Named Arguments', link: '/usrguide/named-arguments' },
+            { text: 'Build-In Operators', link: '/usrguide/built-in-operators' },
             { text: 'Data Types', link: '/usrguide/data-types' },
             { text: 'Multiset Semantics', link: '/usrguide/multi-semantics' },
           ]
@@ -79,6 +78,13 @@ export default defineConfig({
             { text: 'Functors', link: '/usrguide/functors' },
           ]
         },
+        // {
+        //   text: 'Logica for Data Science',
+        //   collapsed: false,
+        //   items: [
+
+        //   ]
+        // },
       ],
 
       // examples
