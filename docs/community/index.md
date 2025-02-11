@@ -1,5 +1,9 @@
 # Community
 
+## Questions, ideas?
+
+Bring up your ideas and ask questions in Logica repository discussions: [Discussions](https://github.com/EvgSkv/logica/discussions).
+
 ## Publication
 
 ### 2024
