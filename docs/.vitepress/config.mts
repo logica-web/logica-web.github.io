@@ -31,9 +31,8 @@ export default defineConfig({
         {
           text: 'Getting Started',
           items: [
-            { text: 'What is Logica', link: '/start/' },
-            { text: 'Why is Logica', link: '/start/start-why-is-logica/' },
-            { text: 'Logica Installation', link: '/start/start-installation/' },
+            { text: 'What is Logica', link: '/start' },
+            { text: 'Why is Logica', link: '/start/start-why-is-logica' },
           ]
         },
       ],
@@ -49,6 +48,7 @@ export default defineConfig({
           text: 'Logica Execution',
           collapsed: false,
           items: [
+            { text: 'Logica Installation', link: '/usrguide/installation' },
             { text: 'Query Engine', link: '/usrguide/query-engine' },
             { text: 'Run in Terminal', link: '/usrguide/run-in-terminal' },
             { text: 'Run in Notebook', link: '/usrguide/run-in-notebook' },
