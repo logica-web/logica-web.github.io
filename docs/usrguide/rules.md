@@ -13,8 +13,8 @@ A rule follows this general format:
 ```
 <conclusion> :- <condition>;
 ```
-- The head (on the left of :- ) represents the conclusion—the new fact being inferred.
-- The body (on the right of :- ) lists the conditions that must be met for the conclusion to hold.
+- The head (on the left of `:- `) represents the conclusion—the new fact being inferred.
+- The body (on the right of `:-` ) lists the conditions that must be met for the conclusion to hold.
 
 This syntax is read as:
 
