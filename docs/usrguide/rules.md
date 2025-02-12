@@ -34,7 +34,7 @@ Quadruped(x) :- NumLegs(x, 4);
 
 The body of this rule is a single call to pre-existing `NumLegs` predicate.
 
-**Example 1**: To state "X is the grandparent of Z if X is the parent of the parent of Z" in Logica, we would write:
+**Example 2**: To state "X is the grandparent of Z if X is the parent of the parent of Z" in Logica, we would write:
 
 ```
 Grandparent(x, z) :- Parent(x, y), Parent(y, z);
@@ -66,7 +66,7 @@ The body of this rule is a disjunction of calls to pre-existing `Parent` predica
 Logica uses `|` to indicate "OR"
 :::
 
-**Example 4**: X is a close relative of Y if X is a parent, a child, or a sibling of Y.
+**Example 5**: X is a close relative of Y if X is a parent, a child, or a sibling of Y.
 
 ```
 CloseRelative(x, y) :-
@@ -77,7 +77,7 @@ CloseRelative(x, y) :-
 
 Multiple rules for a predicate are also allowed. This means that you can define a predicate with several rules, and it is equivalent to a single rule whose body is the disjunction (logical OR) of the bodies of those rules.
 
-**Example 5**: Equivalent to _Example 4_.
+**Example 6**: Equivalent to _Example 4_.
 "X is a close relative of Y if X is the parent of Y. X is a close relative of Y if X is the child of Y.
 X is a close relative of Y if X is a sibling of Y."
 
