@@ -20,6 +20,10 @@ This syntax is read as:
 
 >The conclusion holds if the conditions in the body hold.
 
+Rules in Logica are built by combining predicate calls through two 2 fundamental logic operators:
+* Conjunction denoted as `,` which stands for logical AND.
+* Disjunction denoted as `|` which stands for logical OR.
+
 ## Example Rules
 
 **Example 1**: To state "X is the grandparent of Z if X is the parent of the parent of Z" in Logica, we would write:
