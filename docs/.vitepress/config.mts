@@ -31,7 +31,7 @@ export default defineConfig({
         {
           text: 'Getting Started',
           items: [
-            { text: 'What is Logica', link: '/start' },
+            { text: 'What is Logica', link: '/start/' },
             { text: 'Why is Logica', link: '/start/start-why-is-logica' },
           ]
         },

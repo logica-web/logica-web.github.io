@@ -7,7 +7,7 @@ Logica, short for "Logic with Aggregation," is an open-source declarative logic 
 
 ## Logica Programming
 
-Logic programming is a declarative paradigm where programs are composed of logical statements. Originating in academia during the late 1960s, prominent examples of logic programming languages include Prolog and Datalog. Logica is a successor to Yedalog, a logic programming language developed at Google, and belongs to the Datalog family.
+Logic programming is a declarative paradigm where programs are composed of logical statements. Originating in academia during the late 1960s, prominent examples of logic programming languages include [Prolog](https://en.wikipedia.org/wiki/Prolog) and [Datalog](https://en.wikipedia.org/wiki/Datalog). Logica is a successor to [Yedalog](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.SNAPL.2015.63), a logic programming language developed at Google, and belongs to the Datalog family.
 
 Both Datalog and relational databases share a foundational idea: representing data as relations and manipulating it through operations on these relations. However, Datalog and SQL differ in their descriptive approaches. Datalog draws inspiration from the mathematical syntax of first-order propositional logic, while SQL adopts a natural language-inspired syntax.
 

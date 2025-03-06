@@ -18,14 +18,21 @@ Now you can find out who is mortal with the command:
 ```
 $ logica socrates.l run Mortal
 ```
+and it will run with the built-in SQLite engine. The output would look like
+```
++----------+
+| col0     |
++----------+
+| Socrates |
++----------+
+```
 
-and it will run with the built-in SQLite engine.
-
-The line `@Engine("sqlite");` that you have added looks like a fact, and it is. The predicate here is `@Engine`. Special predicates that start with `@Engine` are called _imperatives_. These predicates are used to command the Logica engine on what to do.
+The line `@Engine("sqlite");` that you have added looks like a fact, and it is. The predicate here is `@Engine`. Special predicates that start with `@Engine` are called _imperatives_ (more can be found here). These predicates are used to command the Logica engine on what to do.
 
 :::tip
 If you are not familiar with predicates, facts, or rules, no worries, we will walk you through the concepts one by one.
 :::
+
 <!-- 
 ## Connecting and reading from database
 
