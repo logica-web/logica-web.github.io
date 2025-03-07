@@ -91,7 +91,26 @@ export default defineConfig({
         {
           text: 'Examples',
           items: [
-            { text: 'PageRank', link: '/examples' },
+            { text: 'Overview', link: '/examples/' },
+          ]
+        },
+        {
+          text: 'Recursive Queries',
+          items: [
+            { text: 'Transitive Closure', link: '/examples/tc' },
+            { text: 'Same Generation', link: '/examples/sg' },
+          ]
+        },
+        {
+          text: ' Aggregation Queries',
+          items: [
+            { text: 'Triangle Counting', link: '/examples/triangle' },
+          ]
+        },
+        {
+          text: ' Aggregation in Recursion',
+          items: [
+            { text: 'Single Shortest Path', link: '/examples/sssp' },
           ]
         },
       ],
