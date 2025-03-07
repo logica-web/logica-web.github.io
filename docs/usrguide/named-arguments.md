@@ -3,7 +3,7 @@ outline: deep
 ---
 # Named arguments 🌟
 
-Now, we have some basic understanding of Logic Programming. Before we dive deeper into the operations, we want to introduce a special feature provided by Logica called "named arguments." 
+Now, we have some basic understanding of Logic Programming. We want to introduce a special feature provided by Logica called "named arguments." 
 
 :::tip
 Named arguments enable operations with tables that have a large number of columns and help with the readability of the output.

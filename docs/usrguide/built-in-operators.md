@@ -1,7 +1,9 @@
 ---
 outline: deep
 ---
-### Built-in Aggregating Functions
+
+# Build-in Operators
+## Aggregating Functions
 
 | Aggregating function <div style="width: 140pt;"></div>   | What it does |
 |------------------------|--------------|
@@ -20,7 +22,7 @@ outline: deep
 | `Avg= x`               | Average over values of x. |
 | `1= x`                 | One (arbitrary) value from what x runs over. This is useful for left joins. |
 
-### Built-in String Manipulation Functions
+## String Manipulation Functions
 
 | Function <div style="width: 140pt;"></div>        | What it does |
 |----------------|--------------|
@@ -32,7 +34,7 @@ outline: deep
 | `Like(s, p)`   | Boolean answering whether string s matches pattern p. Corresponds to SQL’s `s LIKE p`. Pattern p allows `%` wildcard matching any string. |
 | `Upper(s)`     | Turns s into upper case. |
 
-### Built-in Array Manipulation Functions
+## Array Manipulation Functions
 
 | Function         | What it does |
 |------------------|--------------|
@@ -40,7 +42,7 @@ outline: deep
 | `Element(a, i)`  | Element of a at index i. Indices start with 0. |
 | `ArrayConcat(a, b)` | Concatenation of arrays a and b. |
 
-### Built-in Type Casting Functions
+## Type Casting Functions
 
 | Function       | What it does |
 |----------------|--------------|
@@ -48,7 +50,7 @@ outline: deep
 | `ToFloat64(x)` | Casts x to a float number. |
 | `ToString(x)`  | Casts x to a string. |
 
-### Mathematical Functions
+## Mathematical Functions
 
 | Function | What it does |
 |----------|--------------|
@@ -57,7 +59,7 @@ outline: deep
 | `Cos(x)` | Cos of x. |
 | `Log(x)` | Natural logarithm of x. |
 
-### Some Other Functions
+## Some Other Functions
 
 | Function  <div style="width: 140pt;"></div>              | What it does |
 |-----------------------|--------------|

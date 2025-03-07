@@ -3,8 +3,9 @@ outline: deep
 ---
 # Aggregation
 
-There are two types of aggregation in Logica: predicate-level
-aggregation and aggregating expressions.
+Now that we have covered some basic concepts of Logica, let's explore more advanced features, focusing on the powerful aggregation capabilities🔥.
+
+Logica supports two types of aggregation: predicate-level aggregation and aggregating expressions.
 
 ## Predicate-level aggregation
 

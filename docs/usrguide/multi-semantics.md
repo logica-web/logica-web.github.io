@@ -115,7 +115,7 @@ C(x) :- A(x) | B(x);
 
 acts like the Python program:
 
-```
+```python
 C = []
 for x in A:
   C.append(x)
@@ -133,7 +133,7 @@ C(x) :- A(x), B(x);
 
 acts like:
 
-```
+```python
 C = []
 for x1 in A:
   for x2 in B:

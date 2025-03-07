@@ -23,7 +23,7 @@ Logica includes two composite types: _arrays_ and _records_.
 >[!TIP]
 > Elements of composite types can also take the `null` value.
 
-## Arrays
+### Arrays
 
 In Logica, "list" and "array" are synonymous and can be used interchangeably. An array is an ordered sequence of elements of the same type. The syntax for lists is identical to Python: `[element1, element2, …]`.
 
@@ -51,7 +51,7 @@ Centaur("Hylonome");
 Centaur("Dictys");
 ```
 
-## Records
+### Records
 
 A record is a data type consisting of one or more named fields, each storing an element of some data type. Records are similar to JSON objects, [PostgreSQL composite types](https://www.postgresql.org/docs/current/rowtypes.html), and [Google ProtoBuffers](https://en.wikipedia.org/wiki/Protocol_Buffers). The syntax for records is similar to JavaScript object syntax: `{field_name_1: value_1, field_name_2: value_2, …}`.
 
