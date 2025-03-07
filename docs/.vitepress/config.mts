@@ -83,7 +83,7 @@ export default defineConfig({
           items: [
             { text: 'Build-In Operators', link: '/usrguide/built-in-operators' },
           ]
-        },
+        }
       ],
 
       // examples
