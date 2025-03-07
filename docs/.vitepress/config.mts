@@ -61,6 +61,7 @@ export default defineConfig({
             { text: 'Facts', link: '/usrguide/facts' },
             { text: 'Rules', link: '/usrguide/rules' },
             { text: 'Value Types', link: '/usrguide/value-types' },
+            { text: 'Basic Operations', link: '/usrguide/basic-operations' },
             { text: 'Named Arguments', link: '/usrguide/named-arguments' },
             { text: 'Multiset Semantics', link: '/usrguide/multi-semantics' },
           ]

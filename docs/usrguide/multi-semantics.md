@@ -3,11 +3,9 @@ outline: deep
 ---
 # Multiset Semantics
 
-Logica, as well as most other logic programming languages follows multiset semantics.
+Logica, as well as most other logic programming languages follows multiset semantics.That there is no ordering of rows in predicates, but  each row may occur 1, or many times in the predicate.
 
-That there is no ordering of rows in predicates, but 
-each row may occur 1, or many times in the predicate.
-
+## 
 Number of occurrences of a row is called _multiplicity_.
 
 Example 1: Predicate `Fruit` defined with facts
