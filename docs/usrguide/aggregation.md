@@ -113,45 +113,73 @@ The output looks like
 ```
 
 
-## Aggregating expressions
+## Aggregating Expressions
 
-Aggregating expressions of Logica are similar to mathematical 
-[Set builder](https://en.wikipedia.org/wiki/Set-builder_notation#Sets_defined_by_a_predicate) notation,
-but they allow combining elements with an arbitrary aggregating function.
+Aggregating expressions in Logica are similar to mathematical [Set builder](https://en.wikipedia.org/wiki/Set-builder_notation#Sets_defined_by_a_predicate) notation, but they allow combining elements using any aggregating function.
 
-You can call aggregating operator on a multiset using figure parenthesis:
-` <AggregatingOperator>{<aggregated value> :- <proposition>)}`.
+You can apply an aggregating operator to a multiset using curly braces: `<AggregatingOperator>{<aggregated value> :- <proposition>}`.
 
-For example let us assume we have a predicate `Purchase` which holds information about movie ticket purchases, in particular it has
-argument `purchase_id` with the id of the purchase entry and `ticket` holding a list of tickets.
+For example, consider a predicate `Purchase` that contains information about movie ticket purchases, with arguments `purchase_id` for the purchase entry ID and `tickets` holding a list of tickets.
 
-Example 1: Finding total purchase value and most expensive tickets.
-
+**Example**: Calculating the total purchase value and identifying the most expensive tickets.
+Suppose we have the following facts:
+```
+Purchase(purchase_id: 1, 
+  tickets: [ {ticket: "Movie1", price: 50}, 
+    {ticket: "Movie2", price: 30}, 
+    {ticket: "Movie3", price: 20} ]);
+Purchase(purchase_id: 2, 
+  tickets: [ {ticket: "MovieA", price: 100}, 
+    {ticket: "MovieB", price: 150} ]);
+Purchase(purchase_id: 3, 
+  tickets: [ {ticket: "FilmX", price: 10}, 
+    {ticket: "FilmY", price: 5}, 
+    {ticket: "FilmZ", price: 15}, 
+    {ticket: "FilmW", price: 10} ]);
+Purchase(purchase_id: 4, 
+  tickets: [ {ticket: "Blockbuster", price: 200} ]);
+Purchase(purchase_id: 5, 
+  tickets: [ {ticket: "Movie5", price: 25}, 
+    {ticket: "Movie6", price: 50}, 
+    {ticket: "Movie7", price: 75} ]);
+```
+By running the following:
 ```
 PurchaseSummary(purchase_id:, total_value:, most_expensive:) :-
   Purchase(purchase_id:, tickets:),
   total_value = Sum{ticket.price :- ticket in tickets},
   most_expensive = Max{ticket.price :- ticket in tickets};
 ```
+We will get the table:
 
-### List comprehension
+```
++-------------+-------------+----------------+
+| purchase_id | total_value | most_expensive |
++-------------+-------------+----------------+
+| 1           | 100         | 50             |
+| 2           | 250         | 150            |
+| 3           | 40          | 15             |
+| 4           | 200         | 200            |
+| 5           | 150         | 75             |
++-------------+-------------+----------------+
+```
+### List Comprehension
 
-Using `List` aggregation operator enables the use of aggregating expressions as list comprehensions.
+The `List` aggregation operator allows the use of aggregating expressions as list comprehensions.
 
-Example 3: For each purchase keep only expensive tickets.
+**Example**: Retain only expensive tickets for each purchase.
 
 ```
 ExpensiveTickets(purchase_id:, expensive_tickets:) :-
   Purchase(purchase_id:, tickets:),
   expensive_tickets = List{ticket :- ticket in tickets, ticket.price > 100};
-
 ```
 
-### Outer joins
+### Outer Joins
 
-Aggregating expressions can be used to look up information, which serves the same purpose as _outer joins_ in SQL.
+Aggregating expressions can be utilized to retrieve information, similar to how _outer joins_ function in SQL.
 
-Example 4: Assemble phones and emails of people in a single table.
+**Example**: Combine phones and emails of individuals into a single table.
 
 ```
 PeopleContacts(person:, emails:, phones:) :-
@@ -162,26 +190,21 @@ PeopleContacts(person:, emails:, phones:) :-
 
 ### Aggregating nothing to `null`
 
-When proposition of the aggregating expressions is not satisfied by any values then
-built-in aggregating operators result in a `null`.
+When the proposition of an aggregating expression is not satisfied by any values, the built-in aggregating operators result in `null`. For example, if no emails are found for a person in Example above, the `emails` argument will be `null` for that person. To check if a value is `null`, use the `is` operator. 
 
-So for instance if for some person from Example 4 there were no emails found then
-`emails` argument would be equal to `null` in their row.
-
-You can check if some value is null using `is` operator. As Logica compiles to SQL you can
-not use `==` for checking if a value is `null`.
-
-For instance the following rule can be used to find people who has no emails listed.
+The following rule finds people who have no emails listed:
 
 ```
 PersonWithNoEmails(person) :-
   PeopleContacts(person:, emails:), emails is null;
 ```
 
+>[!caution]
+> Since Logica compiles to SQL, you cannot use `==` to check for `null`.
+
 ### Negation as an aggregating expression
 
-To negate a proposition use `~` operator. This operator stands for an aggregating expression.
-Consider a set of facts
+To negate a proposition, use the ~ operator, which represents an aggregating expression. Consider the following set of facts:
 
 ```
 Bird("sparrow");
@@ -198,26 +221,21 @@ CanSing("canary");
 CanSing("cassowary");
 ```
 
-and lets say we want to find all birds that can sing, but can not fly. It can be done
-with the following rule.
+Suppose we want to find all birds that can sing but cannot fly. This can be achieved with the following rule:
 
 ```
 InterestingBird(x) :-
   Bird(x), CanSing(x), ~CanFly(x);
 ```
 
-Logica interprets negation in this rule as follows:
+Logica interprets the negation in this rule as follows:
 
 ```
 InterestingBird(x) :-
   Bird(x), CanSing(x), Max{1 :- CanFly(x)} is null;
 ```
 
-Indeed aggregating expression `Max{1 :- CanFly(x)}` will be aggregating over a non-empty
-multiset of `1` values if and only if proposition `CanFly(x)` holds, and would run over an empty
-set otherwise, resulting in a `null`. 
+The aggregating expression `Max{1 :- CanFly(x)}` will aggregate over a non-empty multiset of `1` values if and only if the proposition CanFly(x) holds. Otherwise, it will run over an empty set, resulting in `null`.
 
 > [!NOTE]
-> Inquisitive reader may have observed that any other built-in
-> aggregating operator could have worked here, e.g. we could have used `Sum{42 :- CanFly(x)}`
-> with the same outcome.
+> An inquisitive reader may observe that any other built-in aggregating operator could work here. For example, we could use `Sum{42 :- CanFly(x)}` with the same outcome.
