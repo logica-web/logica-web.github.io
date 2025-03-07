@@ -7,17 +7,13 @@ Now that we have covered some basic concepts of Logica, let's explore more advan
 
 Logica supports two types of aggregation: predicate-level aggregation and aggregating expressions.
 
-## Predicate-level aggregation
+## Predicate-Level Aggregation
 
-For our purposes we define set to be a multiset with multiplicity of all
-occuring rows to be exactly 1. Predicate-level aggregation allows building sets.
+To define a set, we consider it as a multiset where each row's multiplicity is exactly 1. Predicate-level aggregation enables the construction of such sets.
 
-Use `distinct` keyword in the head of the rule to make the rule aggregating.
-Aggregating rules always produce predicates that correspond to sets, thus the
-choice of `distinct` keyword: all the rows in resulting tables are distinct.
+Use the `distinct` keyword in the rule's head to make it aggregating. Aggregating rules always generate predicates that represent sets, ensuring all rows in the resulting tables are unique.
 
-Let us consider a predicate `FruitPurchase` which tells which fruits of which weights
-we purchased. Say it is defined with the following facts:
+Consider the predicate `FruitPurchase`, which specifies the fruits and their weights that we have purchased. It is defined with the following facts:
 
 ```
 FruitPurchase(fruit: "apple", weight: 0.5);
@@ -28,17 +24,13 @@ FruitPurchase(fruit: "orange", weight: 0.5);
 FruitPurchase(fruit: "pineapple", weight: 0.9);
 FruitPurchase(fruit: "pineapple", weight: 1.1);
 ```
-
-Now sat we need to define predicate `Fruit(fruit:)` that would list all the fruits mentioned
-by `FruitPurchase` exactly once. Have we defined it as `Fruit(fruit:) :- FruitPurchase(fruit:)`
-we would have multiplicities of each fruit equal to its multiplicity in the original table.
-To define the set we se keyword `distinct` as follows:
+Now, suppose we need to define the predicate `Fruit(fruit:)` to list all the fruits mentioned in `FruitPurchase` exactly once. If we define it as `Fruit(fruit:) :- FruitPurchase(fruit:)`, the multiplicities of each fruit would match their multiplicities in the original table. To ensure we get a set, we use the `distinct` keyword as follows:
 
 ```
 Fruit(fruit:) distinct :- FruitPurchase(fruit:);
 ```
 
-Now `Fruit` would evaluate to
+This way, `Fruit` would evaluate to:
 
 ```
 +-----------+
@@ -50,19 +42,17 @@ Now `Fruit` would evaluate to
 +-----------+
 ```
 
-Aggregating predices are also allowed to have aggregating arguments, which would not simply
-be values computed by the body, but aggregations of such values. Unlike regular arguments specified as `<argument_name>: <argument_value>` the aggregating arguments are specified
-as `<argument_name>? <AggregatingOperator>= <aggregated_value>`.
+Aggregating predicates can also include aggregating arguments, which are not just values computed by the body but aggregations of those values. Unlike regular arguments specified as `<argument_name>: <argument_value>`, aggregating arguments are specified as `<argument_name>? <AggregatingOperator>= <aggregated_value>`.
 
-For example if we wanted to compute total weight maximal weights of each type of purchased fruit we could do it with `+` and `Max` aggregating operators as follows:
+For example, to compute the total weight and maximal weights of each type of purchased fruit, you can use the `+` and `Max` aggregating operators as follows:
 
 ```
 Fruit(fruit:,
-      total_weight? += weight,
-      maximal_weight? Max= weight) distinct :- FruitPurchase(fruit:, weight:);
+  total_weight? += weight,
+  maximal_weight? Max= weight) distinct :- FruitPurchase(fruit:, weight:);
 ```
 
-This would evaluate to
+This would evaluate to:
 
 ```
 +-----------+--------------+----------------+
@@ -74,22 +64,21 @@ This would evaluate to
 +-----------+--------------+----------------+
 ```
 
-Special value `null` is ignored by all built-in aggregating operators. So, for example, having an a fact
-`FruitPurchase(fruit: "apple", weight: null);` would have no impact on the output.
+:::tip
+Special value `null` is ignored by all built-in aggregating operators. For instance, if there is a fact `FruitPurchase(fruit: "apple", weight: null);`, it will not affect the output.
+:::
 
-Aggregating functions `ArgMax` and `ArgMin` allow for selection of a key with the largest value.
-These predicate aggregate key-value pairs. A key-value pair in Logica is represented as a
-record `{arg:, value:}`. Infix operator `->` constructs such record.
 
-For example predicate `Q` defined as
+There are additional built-in aggregation operators available, which you can find in the [Cheat Sheet](/usrguide/built-in-operators.md#aggregating-functions). Here, we will discuss two of them: `ArgMax` and `ArgMin`. These functions allow selecting a key with the highest or lowest value, respectively. They aggregate key-value pairs, represented in Logica as records `{arg:, value:}`. The infix operator `->` constructs such records.
+
+For example, consider the predicate `Q` defined as:
 ```
 Q("apple" -> 2);
 Q("banana" -> 4);
 Q("cantaloupe" -> 6);
 ```
 
-evaluates to
-
+This evaluates to:
 ```
 +--------------------------------+
 | col0                           |
@@ -100,9 +89,9 @@ evaluates to
 +--------------------------------+
 ```
 
-So to pick key corresponding to maximum value apply `ArgMax` aggregation operation to `key -> value` pair.
-Example: Selecting wisest person in each city.
+To select the key corresponding to the maximum value, apply the `ArgMax` aggregation operation to the `key -> value` pair. 
 
+Example: Selecting the wisest person in each city.
 ```
 Human(name: "Socrates", iq: 250, year_of_birth: -470, location: "Athens");
 Human(name: "Aristotle", iq: 240, year_of_birth: -384, location: "Athens");
@@ -112,6 +101,17 @@ Human(name: "Themistocles", iq: 130, year_of_birth: -524, location: "Athens");
 WisestHuman(city:, person? ArgMax= name -> iq) distinct :-
   Human(name:, iq:, location: city);
 ```
+
+The output looks like
+```
++----------+------------+
+| city     | person     |
++----------+------------+
+| Athens   | Socrates   |
+| Syracuse | Archimedes |
++----------+------------+
+```
+
 
 ## Aggregating expressions
 
@@ -134,7 +134,7 @@ PurchaseSummary(purchase_id:, total_value:, most_expensive:) :-
   most_expensive = Max{ticket.price :- ticket in tickets};
 ```
 
-## List comprehension
+### List comprehension
 
 Using `List` aggregation operator enables the use of aggregating expressions as list comprehensions.
 
@@ -147,7 +147,7 @@ ExpensiveTickets(purchase_id:, expensive_tickets:) :-
 
 ```
 
-## Outer joins
+### Outer joins
 
 Aggregating expressions can be used to look up information, which serves the same purpose as _outer joins_ in SQL.
 
@@ -160,7 +160,7 @@ PeopleContacts(person:, emails:, phones:) :-
   phones = List{phone :- PersonPhone(person:, phone:)};
 ```
 
-## Aggregating nothing to `null`
+### Aggregating nothing to `null`
 
 When proposition of the aggregating expressions is not satisfied by any values then
 built-in aggregating operators result in a `null`.
@@ -178,7 +178,7 @@ PersonWithNoEmails(person) :-
   PeopleContacts(person:, emails:), emails is null;
 ```
 
-## Negation as an aggregating expression
+### Negation as an aggregating expression
 
 To negate a proposition use `~` operator. This operator stands for an aggregating expression.
 Consider a set of facts
