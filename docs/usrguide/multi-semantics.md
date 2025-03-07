@@ -3,12 +3,12 @@ outline: deep
 ---
 # Multiset Semantics
 
-Logica, as well as most other logic programming languages follows multiset semantics.That there is no ordering of rows in predicates, but  each row may occur 1, or many times in the predicate.
+Logica, like most other logic programming languages, follows multiset semantics. This means there is no ordering of rows in predicates, and each row may occur one or more times in the predicate.
 
-## 
-Number of occurrences of a row is called _multiplicity_.
+## Multiplicity
+The number of occurrences of a row is called its _multiplicity_.
 
-Example 1: Predicate `Fruit` defined with facts
+**Example:** Consider the predicate `Fruit` defined with the following facts:
 
 ```
 Fruit("apple");
@@ -19,7 +19,7 @@ Fruit("banana");
 Fruit("banana");
 ```
 
-evaluates to
+This evaluates to:
 
 ```
 +--------+
@@ -34,9 +34,13 @@ evaluates to
 +--------+
 ```
 
-Disjunction sums multiplicities.
+Here, "apple" has a multiplicity of 2, "orange" has a multiplicity of 1, and "banana" has a multiplicity of 3.
 
-Example 2: Predicate `OurFruit` defined as
+## Disjunction Sums Multiplicities
+
+Disjunction in Logica combines the results of two predicates, summing their multiplicities.
+
+**Example:**
 
 ```
 MyFruit("apple");
@@ -48,7 +52,7 @@ YourFruit("orange");
 OurFruit(x) :- MyFruit(x) | YourFruit(x);
 ```
 
-evaluates to
+This evaluates to:
 
 ```
 +--------+
@@ -61,12 +65,13 @@ evaluates to
 +--------+
 ```
 
+Here, "apple" appears twice because it is present in both `MyFruit` and `YourFruit`.
 
-Conjunction multiplies multiplicities.
+## Conjunction Multiplies Multiplicities
 
-To illustrate the concept we will use an abstract predicate this time.
+Conjunction in Logica combines predicates by multiplying their multiplicities.
 
-Example 3: Predicate `Q` defined as
+**Example:** Consider the predicates `Q` and `R` defined as:
 
 ```
 Q("a", "b");
@@ -80,7 +85,7 @@ R("b", "t");
 P(x, z) :- Q(x, y), R(y, z);
 ```
 
-evaluates to
+This evaluates to:
 
 ```
 +------+------+
@@ -95,32 +100,38 @@ evaluates to
 +------+------+
 ```
 
-Multiset semantics is natural for applications.
+Here, the multiplicity of the pair ("a", "t") is 6 because "a" appears twice in `Q` and "t" appears three times in `R`.
 
-Disjunction is anaolgous to consequent for loops while conjunction is analogous to nested loops.
+## Multiset for Applications
 
-For example program 
+Multiset semantics is natural for applications. Disjunction is analogous to consecutive for-loops, while conjunction is analogous to nested loops.
+
+### Disjunction
+For example, the program:
+
 ```
 C(x) :- A(x) | B(x);
 ```
 
-acts like Python program
+acts like the Python program:
 
 ```
 C = []
 for x in A:
-  C.append(x);
+  C.append(x)
 for x in B:
-  C.append(x);
+  C.append(x)
 ```
 
-And program
+### Conjunction
+
+And the program:
 
 ```
 C(x) :- A(x), B(x);
 ```
 
-Acts like:
+acts like:
 
 ```
 C = []
@@ -129,3 +140,33 @@ for x1 in A:
     if x1 == x2:
       C.append(x1)
 ```
+
+## From Multisets to Sets
+
+The keyword `distinct` makes a predicate represent a set, ensuring each row occurs exactly once.
+
+**Example:**
+
+```
+MyFruit("apple");
+MyFruit("banana");
+
+YourFruit("apple");
+YourFruit("orange");
+
+OurFruitSet(x) distinct :- MyFruit(x) | YourFruit(x);
+```
+
+This evaluates to:
+
+```
++--------+
+| col0   |
++--------+
+| apple  |
+| banana |
+| orange |
++--------+
+```
+
+Here, each fruit appears only once, regardless of how many times it appears in `MyFruit` or `YourFruit`.
