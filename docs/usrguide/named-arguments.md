@@ -1,9 +1,14 @@
 ---
 outline: deep
 ---
-# Named arguments
+# Named arguments 🌟
 
-Now, we have some basic understanding of Logic Programming. Before we dive deeper into the operations, we want to introduce a special feature provided by Logica called "named arguments." Named arguments enable operations with tables that have a large number of columns and help with the readability of the output.
+Now, we have some basic understanding of Logic Programming. Before we dive deeper into the operations, we want to introduce a special feature provided by Logica called "named arguments." 
+
+:::tip
+Named arguments enable operations with tables that have a large number of columns and help with the readability of the output.
+:::
+
 
 Traditional logic programming has the strict principle that we must list all variables when writing rules. Suppose we only need the salary column from the Salary table; we would have to use `Salary(_, _, _, n)` to get the target information. Named arguments simplify this process by allowing us to specify only the needed arguments by name.
 
@@ -46,7 +51,7 @@ AthenianPhilosopher(name:philosopher) :-
   x > 200;
 ```
 
-With the facts from Example 1 we have `AthenianPhilosopher` evaluate to:
+By omitting the column `year`, we can focus on necessary information to get  `AthenianPhilosopher` :
 
 ```
 +-------------+

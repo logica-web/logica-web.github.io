@@ -60,9 +60,8 @@ export default defineConfig({
           items: [
             { text: 'Facts', link: '/usrguide/facts' },
             { text: 'Rules', link: '/usrguide/rules' },
-            { text: 'Named Arguments', link: '/usrguide/named-arguments' },
-            { text: 'Build-In Operators', link: '/usrguide/built-in-operators' },
             { text: 'Data Types', link: '/usrguide/data-types' },
+            { text: 'Named Arguments', link: '/usrguide/named-arguments' },
             { text: 'Multiset Semantics', link: '/usrguide/multi-semantics' },
           ]
         },
@@ -78,13 +77,13 @@ export default defineConfig({
             { text: 'Functors', link: '/usrguide/functors' },
           ]
         },
-        // {
-        //   text: 'Logica for Data Science',
-        //   collapsed: false,
-        //   items: [
-
-        //   ]
-        // },
+        {
+          text: 'Logica Cheatsheet',
+          collapsed: false,
+          items: [
+            { text: 'Build-In Operators', link: '/usrguide/built-in-operators' },
+          ]
+        },
       ],
 
       // examples

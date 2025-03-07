@@ -1,2 +1,2 @@
 @Engine("sqlite");
-# Greet("hello world");
+Greet("hello world");
