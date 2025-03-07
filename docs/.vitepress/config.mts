@@ -71,6 +71,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Aggregation', link: '/usrguide/aggregation' },
+            { text: 'Negation', link: '/usrguide/negation' },
             { text: 'Computation', link: '/usrguide/computation' },
             { text: 'Boolean Logic', link: '/usrguide/boolean-logic' },
             { text: 'Functional Notation', link: '/usrguide/notation' },
