@@ -60,7 +60,7 @@ export default defineConfig({
           items: [
             { text: 'Facts', link: '/usrguide/facts' },
             { text: 'Rules', link: '/usrguide/rules' },
-            { text: 'Data Types', link: '/usrguide/data-types' },
+            { text: 'Value Types', link: '/usrguide/value-types' },
             { text: 'Named Arguments', link: '/usrguide/named-arguments' },
             { text: 'Multiset Semantics', link: '/usrguide/multi-semantics' },
           ]

@@ -16,9 +16,9 @@ To execute a file, we can create a file named `test.l` with the following conten
 ```
 Greet("hello world");
 ```
-:::warning
-Ensure to add the ; to indicate the end of the statement. 
-:::
+>[!caution]
+>Ensure to add the ; to indicate the end of the statement. 
+
 
 Then, running the command 
 ```bash
@@ -41,7 +41,7 @@ logica test.l run_in_terminal Greet
 
 ```
 
-> [!CAUTION]
+> [!caution]
 > If you are using the installed Logica, you might encounter a Google authentication error because it uses Google BigQuery as the default engine. The simplest way to fix this is to add `@Engine("sqlite");` to enforce the use of SQLite.
 
 You might be wondering about the difference between `run_in_terminal` and `run`. `run` is designed for newcomers who don't need the advanced capabilities of Logica. Here's a simple example `run_diff.l`:

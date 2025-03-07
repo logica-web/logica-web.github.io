@@ -78,13 +78,12 @@ AthenianPhilosopher(name:) :-
 Named arguments and variables are usually interchangeable.
 :::
 
-:::warning
-Positional arguments, such as x, y, m, n in `Salary(x, y, m, n)`, are internally interpreted as named arguments with names `col0`, `col1`, `col2`, etc. For example, a call:
-```
-P(x, y, z)
-```
-is equivalent to the call:
-```
-P(col0: x, col1: y, col2: z)
-```
-:::
+>[!caution]
+> Positional arguments, such as x, y, m, n in `Salary(x, y, m, n)`, are internally interpreted as named arguments with names `col0`, `col1`, `col2`, etc. For example, a call:
+> ```
+> P(x, y, z)
+> ```
+> is equivalent to the call:
+> ```
+> P(col0: x, col1: y, col2: z)
+> ```

@@ -11,9 +11,8 @@ Additionally, install the following Python packages to ensure proper functionali
 pip install duckdb pandas graphviz
 ```
 
-:::warning
-Without graphviz, you can still run Logica in a notebook, but the execution process visualization will be limited to an ASCII version instead of the full graphical representation.
-:::
+>[!caution]
+> Without graphviz, you can still run Logica in a notebook, but the execution process visualization will be limited to an ASCII version instead of the full graphical representation.
 
 ## Package Import
 
