@@ -84,6 +84,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Build-In Operators', link: '/usrguide/built-in-operators' },
+            { text: 'Imperatives', link: '/usrguide/imperatives' },
           ]
         }
       ],
