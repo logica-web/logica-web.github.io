@@ -22,7 +22,8 @@ export default defineConfig({
       { text: 'User Guide', link: '/usrguide/' },
       { text: 'Examples', link: '/examples/' },
       { text: 'API', link: '/api/' },
-      { text: 'Community', link: '/community/' }
+      { text: 'Community', link: '/community/' },
+      { text: 'Contributing', link: '/contributing/' }
     ],
 
     sidebar: {
@@ -128,10 +129,19 @@ export default defineConfig({
       ],
       // community
       '/community/': [
+        // {
+        //   text: 'Community',
+        //   items: [
+        //     { text: 'Community', link: '/community' },
+        //   ]
+        // }
+      ],
+      // contribution
+      '/contributing/': [
         {
-          text: 'Community',
+          text: 'Contributing',
           items: [
-            { text: 'Community', link: '/community' },
+            { text: 'contributing', link: '/contributing' },
           ]
         }
       ],
