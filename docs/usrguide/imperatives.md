@@ -31,22 +31,24 @@ Logica imperatives are special directives that start with `@` and provide instru
 
 ### @OrderBy
 ```
-@OrderBy(MyPredicate, "column_name");  # Sort MyPredicate results by column_name
+@OrderBy(MyPredicate, "column_name");  # Sort MyPredicate results by column_name.
 ```
 
 ### @Recursive
 ```
 # Basic usage with iteration limit
-@Recursive(TC, 10);  # TC predicate will iterate up to 10 times
+@Recursive(TC, 10);  # TC predicate will iterate up to 10 times.
 
 # Using the stop condition
-@Recursive(TC, 10, stop: StopCondition);  # Stops when StopCondition has any rows
+@Recursive(TC, 10, stop: StopCondition);  # Stops when StopCondition has any rows.
 
 # Including satellite predicates
-@Recursive(TC, 10, satellites: [Helper1, Helper2]);  # Helper1 and Helper2 iterate along with TC
+@Recursive(TC, 10, satellites: [Helper1, Helper2]);  # Helper1 and Helper2 iterate along with TC.
 ```
 
 ### @AttachDatabase
 ```
-@AttachDatabase("logica_home", "wall.db");  # Connect to wall.db as logica_home
+@AttachDatabase("db", "some_db_file.db");  # Connect to some_db_file.db as db.
+# Querrying the database.
+Person(name:) :- db.Engineer(name:) | db.Analyst(name:);
 ```
