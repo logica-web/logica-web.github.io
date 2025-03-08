@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Logica Imperatives
 Logica imperatives are special directives that start with `@` and provide instructions to the Logica engine. They control how the program is processed, executed, or how results are presented.
 
