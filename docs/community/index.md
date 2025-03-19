@@ -9,7 +9,7 @@ Please bring up your ideas and ask questions in Logica repository discussions: [
 ## Publications
 
 ### 2025
-- **[EDBT]** Skvortsov, E., Mirjafari, S., Garg, O., Xia, Y., Bowers, S., & Ludäscher, B. (2025). *LOGICLM: Robust Application of Large Language Models with Logic Programming for Data Analytics.* (To appear). 
+- **[EDBT]** Skvortsov, E., Mirjafari, S., Garg, O., Xia, Y., Bowers, S., & Ludäscher, B. (2025). [*LOGICLM: Robust Application of Large Language Models with Logic Programming for Data Analytics.*](https://openproceedings.org/2025/conf/edbt/paper-314.pdf). 
 - **[TGD EDBT]** Skvortsov, E., Xia, Y., Ludäscher, B., & Bowers, S. (2025). [*Logica-TGD: Transforming Graph Databases Logically*](https://arxiv.org/abs/2503.00568).
 
 
