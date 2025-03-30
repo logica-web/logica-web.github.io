@@ -150,7 +150,14 @@ export default defineConfig({
       provider: "local"
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/evgskv/logica' }
+      { icon: 'github', link: 'https://github.com/evgskv/logica' },
+      {
+        icon: {
+          svg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Football</title><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm4.66 3.6L19 8.5l-2.29 1.1-2-1.2-.79-2.58A7.89 7.89 0 0 1 16.66 3.6zM12 4l1.35 4.42-3.7 2.88-4.11-1.8-.15-.06A7.992 7.992 0 0 1 12 4zm-7.91 5.95l4.59 2 1.08 4.72-1.6 2.5a8.006 8.006 0 0 1-4.07-9.22zm6.66 11.22l1.68-3.08h3.2l1.68 3.08A8.019 8.019 0 0 1 12 21zm6.31-1.2l-1.6-2.5 1.08-4.72 4.59-2a8.006 8.006 0 0 1-4.07 9.22zM15.45 12l-3.45-2.69-3.45 2.69 1.31 4.92h4.28L15.45 12z"/></svg>'
+        },
+        link: 'https://logica.dev/sandbox.html',
+        ariaLabel: 'Logica Playground'
+      }
     ]
   }
 })

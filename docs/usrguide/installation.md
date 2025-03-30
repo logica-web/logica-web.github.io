@@ -37,4 +37,4 @@ cd logica
 
 In addition, you can explore Logica using our online playground and start experimenting right away.
 
-[🏈 Play Ground](https://logica.dev/sandbox.html)
+[⚽ Playground](https://logica.dev/sandbox.html)

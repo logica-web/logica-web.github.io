@@ -13,7 +13,7 @@ hero:
       text: Getting Started
       link: /start/
     - theme: alt
-      text: 🏈 Play Ground
+      text: ⚽ Logica Playground
       link: https://logica.dev/sandbox.html
     - theme: alt
       text: User Guide
