@@ -74,6 +74,13 @@ AthenianPhilosopher(name:) :-
         location: "Athens", iq:),
   iq > 200;
 ```
+**Example 3**: Change the columns name for `AthenianPhilosopher`
+```
+AthenianPhilosopher(philo: name) :-
+  Human(name:, location: "Athens", iq: x ), 
+  x > 200;
+```
+
 :::tip
 Named arguments and variables are usually interchangeable.
 :::

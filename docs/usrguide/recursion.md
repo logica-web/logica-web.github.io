@@ -3,24 +3,25 @@ outline: deep
 ---
 # Recursion
 
-Logica does allow recursion, for example given predicate `Parent` we can find acnestors
-via rules:
+
+## Overview
+Logica supports recursion but recursion in Logica is restricted to [Concrete Predicates](./functions.md). For example, given the predicate `Parent`, we can define ancestors using the following rules:
 
 ```
-Ancestor(x, y) :- Parent(x, y);
-Ancestor(x, z) :- Parent(x, y), Ancestor(y, z);
+Ancestor(x, y) distinct :- Parent(x, y);
+Ancestor(x, z) distinct :- Parent(x, y), Ancestor(y, z);
 ```
+>[!caution]
+> For recursive queries, it is advisable to always include the `distinct`.
 
-Recursion is only allowed for concrete predicates in Logica. Recursive predicates are computed
-via iteration, starting from an empty predicate and applying the rules a fixed number of steps,
-which is 8 (eitght) by default. For example predicate `N` defined as
+Recursive predicates are computed iteratively, starting from an empty predicate and applying the rules for a fixed number of steps, which defaults to 8 in Logica. For instance, the predicate `N` defined as:
 
 ```
 N(0);
 N(n + 1) :- N(n);
 ```
 
-evaluates to
+evaluates to:
 
 ```
 +------+
@@ -38,9 +39,18 @@ evaluates to
 +------+
 ```
 
-You can change the number of recursion iterations with `@Recursive` annotation. So to make `N` contain all numbers
-upto 20 one would need to define it as
+:::tip
 
+For recursion to work, the predicate in Disjunctive Normal Form (DNF) must have at least one non-recursive disjunct. This means the predicate should either be defined using multiple rules, with at least one being non-recursive, or include a disjunction where at least one disjunct is non-recursive. For example, `Ancestor` can also be defined as:
+
+```
+Ancestor(x, z) distinct :- Parent(x, z) | Parent(x, y), Ancestor(y, z);
+```
+:::
+
+## Recursive Settings
+
+You can adjust the number of recursion iterations using the `@Recursive` imperative. For example, to make `N` include all numbers up to 20, you would define it as:
 
 ```
 @Recursive(N, 20);
@@ -48,37 +58,22 @@ N(0);
 N(n + 1) :- N(n);
 ```
 
-For iteration to kick-off predicate in DNF should have a disjunct that is not recursive. Which means it either needs to
-be defined via multiple rules, at least one of which is non-recursive, or be defined via a disjunction, where at least
-one disjunct is not recursive. For instance `Ancestor` can also be defined as:
 
-```
-Ancestor(x, z) distinct :- Parent(x, z) | Parent(x, y), Ancestor(y, z);
-```
 
-Aggregation is fine in recursive predictes. We just need to make sure that it is a well defined predicate, that is
-signature of all rules is the same.
-For example if `E(a, b)` is a predicate represending an
-edge going from `a` to `b` in a directed graph, then we can find the length `D(x, y)` of the shortest path
-between `x` and `y`, aka distance, as follows.
+## Aggregation in Recursion
+
+Aggregation is allowed in recursive predicates, provided the predicate is well-defined, meaning all rules must share the same signature. For instance, if `E(a, b)` represents an edge from `a` to `b` in a directed graph, the shortest path length `D(x, y)` between `x` and `y` (also known as the distance) can be computed as follows:
 
 ```
 D(x, y) Min= 1 :- E(x, y);
 D(x, z) Min= D(x, y) + D(y, z);
 ```
 
-First rule states that if there is an edge from x to y then distance is 1 or less.
-It will never be less, but we are using Min aggregation operator to be compatible with the second rule.
-The second rule states that distance is subject to triangle inequality.
+The first rule specifies that if there is an edge from `x` to `y`, the distance is 1. The second rule enforces the triangle inequality by stating that the distance is the minimum sum of distances through intermediate nodes.
 
+Using functional values for aggregation, as shown above, often improves readability. However, you are free to use positional argument aggregation as well.
 
-Using functional value for aggregation, like in the example above is often
-helping readability. Of course, you are free to use aggregation of positional arguments as well.
-
-Let us extend the example to also find the shortest path in the named argument `path`.
-It is convenient to store the path excluding the final destination because in this case
-paths before and after mid-point simply concatenate to the path from source to target. We leave it as a
-simple exersice to the reader to write a post-processing predicate that holds the full path.
+To extend this example, we can also compute the shortest path and store it in the named argument `path`. It is convenient to store the path excluding the final destination, as this allows paths before and after a midpoint to concatenate into the full path from source to target. Writing a post-processing predicate to include the final destination is left as an exercise for the reader.
 
 ```
 D(x, y, path? ArgMin= [x] -> 1) Min= 1 :- E(x, y);
@@ -86,6 +81,4 @@ D(x, z, path? ArgMin= ArrayConcat(path1, path2) -> d) Min= d :-
   d = D(x, y, path: path1) + D(y, z, path: path2);
 ```
 
-First rule states that if there is an edge from `x` to `y` then you just go through `x` 
-efore getting to your destination. Second rule states that if there is a path from `x` to `y`
-and a path from `y` to `z` then path from `x` to `z` is concatenation of paths.
+The first rule states that if there is an edge from `x` to `y`, the path consists of just `x` before reaching the destination. The second rule specifies that if there is a path from `x` to `y` and another from `y` to `z`, the path from `x` to `z` is the concatenation of the two paths.
