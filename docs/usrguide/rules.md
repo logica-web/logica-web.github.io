@@ -16,6 +16,10 @@ A rule follows this general format:
 - The head (on the left of `:- `) represents the conclusion—the new fact being inferred.
 - The body (on the right of `:-` ) lists the conditions that must be met for the conclusion to hold.
 
+:::tip
+`:-` sign is called turnstile.
+:::
+
 This syntax is read as:
 
 >The conclusion holds if the conditions in the body hold.
@@ -86,3 +90,6 @@ CloseRelative(x, y) :- Parent(x, y);
 CloseRelative(x, y) :- Parent(y, x);
 CloseRelative(x, y) :- Parent(z, x), Parent(z, y);
 ```
+## Alternative Rule Formats
+
+The base format for rules in Logica is ```<conclusion> :- <condition>;```. However, Logica also supports additional rule formats, which will be introduced and explained on a case-by-case basis.

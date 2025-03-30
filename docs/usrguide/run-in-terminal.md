@@ -20,7 +20,7 @@ Greet("hello world");
 >Ensure to add the ; to indicate the end of the statement. 
 
 
-Then, running the command 
+Then, running the command `logica <filename> run <predicate name>`
 ```bash
 logica test.l run Greet
 ``` 
@@ -42,7 +42,7 @@ logica test.l run_in_terminal Greet
 ```
 
 > [!caution]
-> If you are using the installed Logica, you might encounter a Google authentication error because it uses Google BigQuery as the default engine. The simplest way to fix this is to add `@Engine("sqlite");` to enforce the use of SQLite.
+> If you are using the installed Logica locally, you might encounter a Google authentication error because it uses Google BigQuery as the default engine. The simplest way to fix this is to add `@Engine("sqlite");` to enforce the use of SQLite.
 
 You might be wondering about the difference between `run_in_terminal` and `run`. `run` is designed for newcomers who don't need the advanced capabilities of Logica. Here's a simple example `run_diff.l`:
 
@@ -95,4 +95,4 @@ In contrast, using `run_in_terminal` will produce:
 
 The main difference is that `run_in_terminal` supports complete iterations.
 >[!TIP]
->In most cases, we recommend using `run_in_terminal` to perform the task.
+>In most cases, we recommend using `run_in_terminal` to perform your task.

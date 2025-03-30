@@ -6,13 +6,13 @@ outline: deep
 
 ## Prerequisite
 To get started with Logica quickly, ensure that Logica and Jupyter are installed on your system, or use Google Colab with Logica pre-installed.
-Additionally, install the following Python packages to ensure proper functionality (Yes, you can use DuckDB!!!):
-```
+Besides, you should install the following Python packages to ensure proper functionality (Yes, this enable you to use DuckDB!!!):
+```bash
 pip install duckdb pandas graphviz
 ```
 
 >[!caution]
-> Without graphviz, you can still run Logica in a notebook, but the execution process visualization will be limited to an ASCII version instead of the full graphical representation.
+> Without graphviz, you can still run Logica in a notebook, but the visualization of execution process  will be limited to an ASCII version instead of the full graphical representation.
 
 ## Package Import
 
@@ -30,8 +30,9 @@ For example, to write a "Hello, World!" program in a Notebook, use:
 @Engine("sqlite");
 Greeting("Hello World!");
 ```
+:::warning
 After `%%logica`, specify the predicate to output, similar to Clingo's `#show`. Also, don't forget to specify the engine to use.
-
+:::
 ## Result Interpretation
 With this script, you will get the following:
 <iframe src="/quickstart_result_interpret.html" width="100%" height="280px" frameborder="0.3"></iframe>

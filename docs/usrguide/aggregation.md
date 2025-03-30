@@ -101,7 +101,13 @@ Human(name: "Themistocles", iq: 130, year_of_birth: -524, location: "Athens");
 WisestHuman(city:, person? ArgMax= name -> iq) distinct :-
   Human(name:, iq:, location: city);
 ```
-
+:::tip
+Another way to write this is 
+```
+WisestHuman(city:, person? ArgMax= {arg:name, value:iq}) distinct :-
+  Human(name:, iq:, location: city);
+```
+:::
 The output looks like
 ```
 +----------+------------+
@@ -167,6 +173,11 @@ We will get the table:
 
 The `List` aggregation operator allows the use of aggregating expressions as list comprehensions.
 
+**Example**: List of even numbers less than 20
+```
+SomeEvens(temp:):- temp List= ( 2 * n :- n in Range(10));
+```
+
 **Example**: Retain only expensive tickets for each purchase.
 
 ```
@@ -177,7 +188,7 @@ ExpensiveTickets(purchase_id:, expensive_tickets:) :-
 
 ### Outer Joins
 
-Aggregating expressions can be utilized to retrieve information, similar to how _outer joins_ function in SQL.
+Aggregating expressions may refer other predicates, similar to how _outer joins_ function in SQL.
 
 **Example**: Combine phones and emails of individuals into a single table.
 
@@ -190,9 +201,29 @@ PeopleContacts(person:, emails:, phones:) :-
 
 ### Aggregating nothing to `null`
 
-When the proposition of an aggregating expression is not satisfied by any values, the built-in aggregating operators result in `null`. For example, if no emails are found for a person in Example above, the `emails` argument will be `null` for that person. To check if a value is `null`, use the `is` operator. 
+When the proposition of an aggregating expression is not satisfied by any values, the built-in aggregating operators result in `null`. For example, if no emails are found for a person in Example above, the `emails` argument will be `null` for that person. 
 
-The following rule finds people who have no emails listed:
+**Example**: Summing Items in a List
+```
+Data(key: 1, items: [1,2,3]);
+Data(key: 2, items: []);
+ 
+Q(key:, sum_of_values:) :-
+  Data(key:, items:),
+  sum_of_values += (x :- x in items);
+```
+
+The resulting table is:
+```
++-----+---------------+
+| key | sum_of_values |
++-----+---------------+
+| 1   | 6             |
+| 2   | None          |
++-----+---------------+
+```
+
+To determine if a value is `null`, use the `is` operator. For instance, the following rule identifies individuals without any listed emails:
 
 ```
 PersonWithNoEmails(person) :-

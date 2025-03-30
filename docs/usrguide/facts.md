@@ -25,7 +25,7 @@ Salary("Jane", "Doe", "Engineering", 8000);
 Salary("Alice", "Johnson", "Sales", 7500);
 ```
 
-In Logica, you specify at execution which predicate you would like to produce. To see the table of the parent relationship, you would run:
+In Logica, you specify at execution which predicate you would like to produce. To see the table of the parent relationship, you would run
 
 ```
 $ logica salary.l run Salary
@@ -53,7 +53,7 @@ Logica uses Pascal case for predicates.
 
 ## Variables
 
-Sometimes, we can use letters to represent values. For example, we use `x`, `y`, `m`, `n` to represent the relationship in `Salary(x, y, m, n)`. In such cases, these letters are called variables, which usually correspond to columns.
+Sometimes, we can use letters to represent values. For example, we use `x`, `y`, `m`, `n` to represent the relationship in `Salary(x, y, m, n)`. In such cases, these letters are called variables, which usually correspond to columns in a table.
 
 :::tip
 Logica uses snake case for variables.
