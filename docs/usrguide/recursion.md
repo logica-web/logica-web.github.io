@@ -5,7 +5,7 @@ outline: deep
 
 
 ## Overview
-Logica supports recursion but recursion in Logica is restricted to [Concrete Predicates](./functions.md). For example, given the predicate `Parent`, we can define ancestors using the following rules:
+Logica supports recursion but recursion in Logica is restricted to [Concrete Predicates](./functions.md#injectable-predicates). For example, given the predicate `Parent`, we can define ancestors using the following rules:
 
 ```
 Ancestor(x, y) distinct :- Parent(x, y);

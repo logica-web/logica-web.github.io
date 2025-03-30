@@ -4,7 +4,7 @@ outline: deep
 # Functions 
 
 
-# Injectable Predicates
+## Injectable Predicates
 
 A Logica predicate is referred to as _concrete_ when it evaluates to a specific table of values. All the predicates we have discussed so far fall into this category, as they are defined either by:
 - A set of facts, or
