@@ -72,8 +72,8 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Aggregation', link: '/usrguide/aggregation' },
+            { text: 'Injectible Predicates', link: '/usrguide/ij_pred' },
             { text: 'Negation', link: '/usrguide/negation' },
-            { text: 'Computation', link: '/usrguide/computation' },
             { text: 'Boolean Logic', link: '/usrguide/boolean-logic' },
             { text: 'Functional Notation', link: '/usrguide/notation' },
             { text: 'Recursion', link: '/usrguide/recursion' },
