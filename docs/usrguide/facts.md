@@ -85,7 +85,7 @@ Facts cannot be used in rules and are usually represented by atoms.
 
 ## Literal
 
-A literal is an atom or its negation. For instance, `Salary(x, y, m, n)` is both an atom and a literal, but `not Salary(x, y, m, n)` is a literal but not an atom. Literals are used in rules to express conditions that must be met for the rule to apply.
+A literal is an atom or its negation. For instance, `Salary(x, y, m, n)` is both an atom and a literal, however `not Salary(x, y, m, n)` is a literal and not an atom. Literals are used in rules to express conditions that must be met for the rule to apply.
 
 
 <!-- ## Facts from Database

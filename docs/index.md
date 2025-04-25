@@ -4,7 +4,7 @@ layout: home
 
 hero:
   # name: "logica_web"
-  text: "Logic Programming Language for Data Analysis"
+  text: "Logic Programming for Declarative Data Science "
   tagline:  Logica (= Logic + aggregation) is an open-source, feature-enhanced version of Datalog that automatically compiles logic rules to query engines
   image:
     src: /max_flow.png

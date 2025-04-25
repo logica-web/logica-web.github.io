@@ -21,7 +21,7 @@ export default defineConfig({
       { text: 'Getting Started', link: '/start/' },
       { text: 'User Guide', link: '/usrguide/' },
       { text: 'Examples', link: '/examples/' },
-      { text: 'API', link: '/api/' },
+      // { text: 'API', link: '/api/' },
       { text: 'Community', link: '/community/' },
       { text: 'Contributing', link: '/contributing/' }
     ],
@@ -119,14 +119,14 @@ export default defineConfig({
         },
       ],
       // api
-      '/api/': [
-        {
-          text: 'API',
-          items: [
-            { text: 'API', link: '/api' },
-          ]
-        }
-      ],
+      // '/api/': [
+      //   {
+      //     text: 'API',
+      //     items: [
+      //       { text: 'API', link: '/api' },
+      //     ]
+      //   }
+      // ],
       // community
       '/community/': [
         // {

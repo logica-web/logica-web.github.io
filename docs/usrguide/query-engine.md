@@ -27,7 +27,7 @@ and it will run with the built-in SQLite engine. The output would look like
 +----------+
 ```
 
-The line `@Engine("sqlite");` that you have added looks like a fact, and it is. The predicate here is `@Engine`. Special predicates that start with `@Engine` are called _imperatives_ (more can be found [here](./imperatives.md)). These predicates are used to command the Logica engine on what to do.
+The line `@Engine("sqlite");` that you have added looks like a fact, and it is. The predicate here is `@Engine`. Special predicates that start with `@Engine` are called _imperatives_, which are used to command the Logica engine on what to do.
 
 Obviously, you can use other query engines to run the queries such as DuckDB and BigQuery.
 <!-- ## DuckDB

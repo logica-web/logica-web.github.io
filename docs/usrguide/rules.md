@@ -17,7 +17,7 @@ A rule follows this general format:
 - The body (on the right of `:-` ) lists the conditions that must be met for the conclusion to hold.
 
 :::tip
-`:-` sign is called turnstile.
+`:-` sign is called implication symbol.
 :::
 
 This syntax is read as:

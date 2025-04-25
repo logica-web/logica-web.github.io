@@ -31,7 +31,7 @@ For example, to write a "Hello, World!" program in a Notebook, use:
 Greeting("Hello World!");
 ```
 :::warning
-After `%%logica`, specify the predicate to output, similar to Clingo's `#show`. Also, don't forget to specify the engine to use.
+After `%%logica`, specify the predicate to output, similar to [Clingo](https://potassco.org/clingo/)'s `#show`. Also, don't forget to specify the engine to use.
 :::
 ## Result Interpretation
 With this script, you will get the following:
