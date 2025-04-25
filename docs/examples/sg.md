@@ -23,7 +23,9 @@ Parent("b2", "b22");
 
 ## Solution 1: Conventional Recursive Approach
 
-```
+::: code-group
+
+```sh [logica]
 # Same generation relation
 # Base case: Siblings are in the same generation
 SG(x, y) :- Parent(p, x), Parent(p, y), x != y;
@@ -32,6 +34,27 @@ SG(x, y) :- Parent(p, x), Parent(p, y), x != y;
 # then x and y are in the same generation
 SG(x, y) :- Parent(p1, x), Parent(p2, y), SG(p1, p2), x != y;
 ```
+
+```sh [souffle]
+.decl Edge(x:number, y:number)
+.input Edge(filename="x.csv", delimiter=",", headers=true)
+.decl SG(x: number, y: number)
+.output SG
+
+SG(x,y) :- Edge(p,x), Edge(p,y), x!=y.
+SG(x,y) :- Edge(a,x), SG(a,b), Edge(b,y).
+```
+
+```sh [radlog(bigdatalog)]
+database({
+  arc(fromnodeid: integer, tonodeid: integer)
+}).
+
+sg(X,Y) <- arc(P,X), arc(P,Y), X!=Y.
+sg(X,Y) <- arc(A,X), sg(A,B), arc(B,Y).
+```
+:::
+
 
 ## Solution 2: Generation Depth Approach
 

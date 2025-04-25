@@ -18,13 +18,45 @@ Edge("b", "d");  # This edge creates a shortcut from b to d
 
 ## Solution
 
-```
+
+
+::: code-group
+
+```sh [logica]
 # Base case: If there is a direct edge from x to y, then y is reachable from x
 TC(x, y) :- Edge(x, y);
 
 # Recursive case: If x can reach z and z can reach y, then x can reach y
 TC(x, y) :- TC(x, z), TC(z, y);
 ```
+
+```sh [souffle]
+.decl Edge(x:number, y:number)
+.input Edge(filename="x.csv", delimiter=",", headers=true)
+.decl TC(x: number, y: number)
+.output TC
+
+TC(x,y) :- Edge(x,y).
+TC(x,y) :- TC(x,z), Edge(z,y).
+```
+
+```sh [radlog(bigdatalog)]
+database({
+  arc(fromnodeid: integer, tonodeid: integer)
+}).
+
+tc(X,Y) <- arc(X,Y).
+tc(X,Y) <- tc(X,Z), arc(Z,Y).
+```
+:::
+
+<!-- ```
+# Base case: If there is a direct edge from x to y, then y is reachable from x
+TC(x, y) :- Edge(x, y);
+
+# Recursive case: If x can reach z and z can reach y, then x can reach y
+TC(x, y) :- TC(x, z), TC(z, y);
+``` -->
 
 ## Expected Results
 
