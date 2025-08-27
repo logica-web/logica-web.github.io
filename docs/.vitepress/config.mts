@@ -82,6 +82,7 @@ export default defineConfig({
             { text: 'Functions', link: '/usrguide/functions' },
             { text: 'Boolean Logic', link: '/usrguide/boolean-logic' },
             { text: 'Functional Notation', link: '/usrguide/notation' },
+            { text: 'Answer Set Programming', link: '/usrguide/asp' },
             { text: 'Functors', link: '/usrguide/functors' },
           ]
         },
