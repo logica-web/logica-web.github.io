@@ -136,7 +136,7 @@ Item("Water", 3, 20);
 Item("Food", 2, 15);
 Item("Rope", 1, 5);
 Item("Flashlight", 1, 10);
-Item("Medicine", 2, 25);
+Item("Raincoat", 2, 25);
 
 # Maximum weight capacity
 MaxWeight(5);
@@ -156,7 +156,7 @@ TotalValue(total) :-
 MaxValue() = Max{value :- TotalValue(value)} shouldbe;
 
 # Solve the problem, adding an extra item via additional facts
-Problem() = ["Item", "Selected", "Overweight", "TotalValue", "MaxValue"];
+Problem() = ["Item", "Selected", "Overweight", "MaxWeight", "TotalValue", "MaxValue"];
 ExtraFacts() = [ClingoFact("Item", ["Knife", "1", "8"])];
 Models() = Clingo(Problem(), ExtraFacts());
 
