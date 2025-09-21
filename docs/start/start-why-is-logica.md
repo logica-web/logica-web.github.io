@@ -3,7 +3,7 @@ outline: deep
 ---
 
 # Why Logica?
-Logica is designed for engineers, data scientists, and other professionals who require advanced data processing and analysis capabilities. It enables users to write queries and pipelines that can be executed on BigQuery, SQLite, and PostgreSQL, making data stored in these systems accessible through Logica.
+Logica is designed for engineers, data scientists, and other professionals who require advanced data processing and analysis capabilities. It enables users to write queries and pipelines that can be executed on BigQuery, DuckDB, SQLite, and PostgreSQL, making data stored in these systems accessible through Logica.
 
 By compiling to SQL, Logica provides the computational power of SQL engines—including the massively distributed Google BigQuery engine—while retaining the intuitive syntax of logic programming. This is particularly advantageous, as BigQuery is significantly more powerful than most native logic programming engines available today.
 
