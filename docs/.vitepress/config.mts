@@ -20,6 +20,7 @@ export default defineConfig({
     nav: [
       { text: 'Getting Started', link: '/start/' },
       { text: 'User Guide', link: '/usrguide/' },
+      { text: 'Logica+AI', link: '/logica-ai/' },
       { text: 'Examples', link: '/examples/' },
       {
         text: 'More',
@@ -123,6 +124,37 @@ export default defineConfig({
             { text: 'Single Shortest Path', link: '/examples/sssp' },
           ]
         },
+      ],
+      // logica-ai
+      '/logica-ai/': [
+        {
+          text: 'Logica + AI',
+          collapsed: false,
+          items: [
+            { text: 'Overview', link: '/logica-ai/' },
+          ]
+        },
+        {
+          text: 'LogicLM',
+          collapsed: false,
+          items: [
+            { text: 'LogicLM', link: '/logica-ai/logiclm' },
+          ]
+        },
+        {
+          text: 'NL2SQL',
+          collapsed: false,
+          items: [
+            { text: 'NL2SQL', link: '/logica-ai/nl2sql' },
+          ]
+        },
+        {
+          text: 'NeSy',
+          collapsed: false,
+          items: [
+            { text: 'NeSy', link: '/logica-ai/nesy' },
+          ]
+        }
       ],
       // api
       // '/api/': [
