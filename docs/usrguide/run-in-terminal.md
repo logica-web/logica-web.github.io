@@ -34,6 +34,8 @@ will produce the following output:
 +-------------+
 ```
 
+and you can use `logica file.l run predicate1,predicate2,...` to run multiple predicates in the file.
+
 ### run_in_terminal
 You can also run the file `test.l` in the terminal using:
 ```
@@ -92,6 +94,8 @@ In contrast, using `run_in_terminal` will produce:
 | 93           |
 ...
 ```
+
+Same as `run`, you can also use `logica file.l run_in_terminal predicate1,predicate2,...`.
 
 The main difference is that `run_in_terminal` supports complete iterations.
 >[!TIP]
