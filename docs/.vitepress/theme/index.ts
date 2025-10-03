@@ -4,6 +4,7 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import ContributorsList from '../components/ContributorsList.vue'
+import Publication from '../components/Publication.vue'
 
 export default {
   extends: DefaultTheme,
@@ -14,6 +15,7 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     app.component('ContributorsList', ContributorsList)
+    app.component('Publication', Publication)
   },
   setup() {
     if (typeof document !== 'undefined') {

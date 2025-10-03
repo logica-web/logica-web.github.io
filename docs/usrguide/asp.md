@@ -6,7 +6,7 @@ Logica provides seamless integration with Answer Set Programming through the Cli
 
 ASP functionality is currently available only with the DuckDB engine. To enable ASP integration, configure your engine as follows:
 
-```logica
+```
 @Engine("duckdb", clingo: {
   enabled: true,
   models_limit: ∞,
@@ -28,7 +28,7 @@ Logica introduces three specialized operators for Answer Set Programming:
 
 The `couldbe` operator creates choice rules, allowing the solver to optionally include facts in the solution:
 
-```logica
+```
 # Each item could potentially be selected
 Selected(item) couldbe :- Item(item, weight, value);
 ```
@@ -39,7 +39,7 @@ This generates the ASP choice rule: `{Selected(item) : Item(item, weight, value)
 
 The `cantbe` operator defines constraints that must not be violated in any valid solution:
 
-```logica
+```
 # Cannot exceed weight limit
 Overweight() cantbe :-
   Sum{weight :- Selected(item), Item(item, weight, value)} > max_weight,
@@ -52,7 +52,7 @@ This creates a constraint that eliminates any answer set where the condition hol
 
 The `shouldbe` operator specifies optimization objectives:
 
-```logica
+```
 # Maximize total value
 MaxValue() = Max{value :- TotalValue(value)} shouldbe;
 
@@ -66,7 +66,7 @@ The solver will find answer sets that optimize (maximize or minimize) the specif
 
 The `Clingo()` function executes ASP solving and returns the resulting models:
 
-```logica
+```
 Models() = Clingo(predicates_list, additional_facts);
 ```
 
@@ -77,7 +77,7 @@ Models() = Clingo(predicates_list, additional_facts);
 
 ### Example Usage
 
-```logica
+```
 # Define the ASP problem
 Item("Water", 3, 20);
 Item("Food", 2, 15);
@@ -96,7 +96,7 @@ Models() = Clingo(["Item", "Selected", "Overweight"], []);
 
 Use `ExtractClingoCall()` to extract specific predicates from the solution models:
 
-```logica
+```
 # Extract selected items from each model
 SelectedItems(item, model_id) :-
   ExtractClingoCall(item, predicate: "Selected", model_id) = Models();
@@ -110,7 +110,7 @@ Schedule(meeting, room, time, model_id) :-
 
 When using optimization (`shouldbe`), the model with the highest `model_id` contains the optimal solution:
 
-```logica
+```
 OptimalSolution(item) :-
   SelectedItems(item, model_id: Max{m.model_id :- m in Models()});
 ```
@@ -119,7 +119,7 @@ OptimalSolution(item) :-
 
 You can augment your ASP program with additional facts using `ClingoFact`:
 
-```logica
+```
 Models() = Clingo(
   ["Item", "Selected", "Overweight"],
   [ClingoFact("Item", ["Flashlight", "1", "10"])]
@@ -128,7 +128,7 @@ Models() = Clingo(
 
 ## Complete Example: Knapsack Problem
 
-```logica
+```
 @Engine("duckdb", clingo: {time_limit: ∞, models_limit: ∞});
 
 # Items with weight and value

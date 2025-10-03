@@ -189,3 +189,12 @@
   margin-bottom: -95px !important;
   /* Adjust the value as needed */
 }
+
+/* Year headers for publications */
+.year-header {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #999;
+  margin: 40px 0 24px 0;
+  letter-spacing: -0.02em;
+}
