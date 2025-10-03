@@ -22,6 +22,7 @@ export default defineConfig({
       { text: 'User Guide', link: '/usrguide/' },
       { text: 'Logica+AI', link: '/logica-ai/' },
       { text: 'Examples', link: '/examples/' },
+      { text: 'References', link: '/references/' },
       {
         text: 'More',
         items: [
@@ -42,6 +43,15 @@ export default defineConfig({
             { text: 'Why is Logica', link: '/start/start-why-is-logica' },
           ]
         },
+      ],
+      // references
+      '/references/': [
+        // {
+        //   text: 'References',
+        //   items: [
+        //     { text: 'Overview', link: '/references/' },
+        //   ]
+        // }
       ],
       '/usrguide/': [
         {
@@ -176,12 +186,12 @@ export default defineConfig({
       ],
       // contribution
       '/contributing/': [
-        {
-          text: 'Contributing',
-          items: [
-            { text: 'contributing', link: '/contributing' },
-          ]
-        }
+        // {
+        //   text: 'Contributing',
+        //   items: [
+        //     { text: 'contributing', link: '/contributing' },
+        //   ]
+        // }
       ],
     },
     search: {
