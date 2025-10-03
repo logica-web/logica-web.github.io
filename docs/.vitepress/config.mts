@@ -14,15 +14,15 @@ export default defineConfig({
     },
     footer: {
       message: '',
-      copyright: 'Released under the Apache 2.0 License. Copyright © 2024-present Logica Devs'
+      copyright: 'Released under the Apache 2.0 License. Copyright © 2024-present <a href="https://github.com/logica-web/logica-web.github.io" style="text-decoration: underline;">Logica Devs</a>'
     },
     siteTitle: false,
     nav: [
       { text: 'Getting Started', link: '/start/' },
       { text: 'User Guide', link: '/usrguide/' },
-      { text: 'Logica+AI', link: '/logica-ai/' },
       { text: 'Examples', link: '/examples/' },
-      { text: 'References', link: '/references/' },
+      { text: 'Logica+AI', link: '/logica-ai/' },
+      { text: 'Publications', link: '/publications/' },
       {
         text: 'More',
         items: [
@@ -44,8 +44,7 @@ export default defineConfig({
           ]
         },
       ],
-      // references
-      '/references/': [
+      '/publications/': [
         // {
         //   text: 'References',
         //   items: [
