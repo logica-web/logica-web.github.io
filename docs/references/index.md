@@ -5,9 +5,6 @@ title: References
 # References
 
 This page collects key references, papers, and resources related to Logica. Content to be expanded.
-
-
-
 ## Publications
 
 ### 2025
@@ -19,10 +16,10 @@ This page collects key references, papers, and resources related to Logica. Cont
   ```bibtex
   @inproceedings{garg2025natural,
     title={Natural Language to LOGICA: Towards Interactive and Explainable Data Analytics},
-    author={Garg, Ojas and Mirjafari, Saber and Xia, Yilin and Bowers, Shawn and Lud{\"a}scher, Bertram and Skvortsov, Evgeny},
+    author={Garg, Ojaswa and Mirjafari, Shayan and Xia, Yilin and Bowers, Shawn and Lud{\"a}scher, Bertram and Skvortsov, Evgeny},
     booktitle={International Symposium on Logic-Based Program Synthesis and Transformation},
     year={2025},
-    organization={Springer}
+    publisher={Springer}
   }
   ```
   </details>
@@ -34,10 +31,11 @@ This page collects key references, papers, and resources related to Logica. Cont
   ```bibtex
   @inproceedings{skvortsov2025logiclm,
     title={LOGICLM: Robust Application of Large Language Models with Logic Programming for Data Analytics},
-    author={Skvortsov, Evgeny and Mirjafari, Saber and Garg, Ojas and Xia, Yilin and Bowers, Shawn and Lud{\"a}scher, Bertram},
+    author={Skvortsov, Evgeny and Mirjafari, Shayan and Garg, Ojaswa and Xia, Yilin and Bowers, Shawn and Lud{\"a}scher, Bertram},
     booktitle={Proceedings of the 28th International Conference on Extending Database Technology},
-    pages={798--801},
-    year={2025}
+    pages={1086--1089},
+    year={2025},
+    publisher={OpenProceedings}
   }
   ```
   </details>
@@ -51,7 +49,8 @@ This page collects key references, papers, and resources related to Logica. Cont
     title={Logica-TGD: Transforming Graph Databases Logically},
     author={Skvortsov, Evgeny and Xia, Yilin and Lud{\"a}scher, Bertram and Bowers, Shawn},
     booktitle={TGD Workshop at EDBT/ICDT 2025},
-    year={2025}
+    year={2025},
+    publisher={CEUR-WS.org}
   }
   ```
   </details>
@@ -68,8 +67,9 @@ This page collects key references, papers, and resources related to Logica. Cont
     title={Logica: Declarative Data Science for Mere Mortals},
     author={Skvortsov, Evgeny and Xia, Yilin and Lud{\"a}scher, Bertram},
     booktitle={Proceedings of the 27th International Conference on Extending Database Technology},
-    pages={757--760},
-    year={2024}
+    pages={842--845},
+    year={2024},
+    publisher={OpenProceedings}
   }
   ```
   </details>
@@ -83,7 +83,8 @@ This page collects key references, papers, and resources related to Logica. Cont
     title={From Logic Programming to Programming in Logica: A First-Course in Declarative Data Science \& Engineering},
     author={Skvortsov, Evgeny and Xia, Yilin and Bowers, Shawn and Lud{\"a}scher, Bertram},
     booktitle={PEG Workshop at ICLP 2024},
-    year={2024}
+    year={2024},
+    publisher={CEUR-WS.org}
   }
   ```
   </details>
@@ -97,7 +98,8 @@ This page collects key references, papers, and resources related to Logica. Cont
     title={The Logica System: Elevating SQL Databases to Declarative Data Science Engines},
     author={Skvortsov, Evgeny and Xia, Yilin and Bowers, Shawn and Lud{\"a}scher, Bertram},
     booktitle={Datalog 2.0 Workshop at ICLP 2024},
-    year={2024}
+    year={2024},
+    publisher={CEUR-WS.org}
   }
   ```
   </details>
