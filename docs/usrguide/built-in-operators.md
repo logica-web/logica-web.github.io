@@ -62,9 +62,10 @@ outline: deep
 ## Some Other Functions
 
 | Function  <div style="width: 140pt;"></div>              | What it does |
-|-----------------------|--------------|
-| `IsNull(x)`           | Boolean answering whether x is null. |
-| `Constraint(x)`       | A proposition that x is a boolean which is true. Use it in the body of the predicate to filter on a boolean variable or boolean function value. E.g., `Q(x, y) :- T(x, y, z), Constraint(z), Constraint(F(x));` Here z is a boolean column and F is a boolean function. |
-| `Constraint(x in l)`  | Boolean value that checks that x is an element of a list l. |
-| `Range(n)`            | An array of natural numbers from 0 to n - 1. |
-| `SqlExpr(s, r)`       | Compiles to an SQL expression equal to Python’s s.format(r) where record r is interpreted as a dictionary. |
+|---------------------------|--------------|
+| `IsNull(x)`, `x is null`  | Boolean answering whether x is `null`. |
+| `Coalesce(x, y, ..., z)`  | First non-`null` value out of `x, y, ..., z`. |
+| `Constraint(x)`           | A proposition that x is a boolean which is true. Use it in the body of the predicate to filter on a boolean variable or boolean function value. E.g., `Q(x, y) :- T(x, y, z), Constraint(z), Constraint(F(x));` Here z is a boolean column and F is a boolean function. |
+| `Constraint(x in l)`      | Boolean value that checks that x is an element of a list l. |
+| `Range(n)`                | An array of natural numbers from 0 to n - 1. |
+| `SqlExpr(s, r)`           | Compiles to an SQL expression equal to Python’s s.format(r) where record r is interpreted as a dictionary. |
