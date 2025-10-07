@@ -1,5 +1,5 @@
 <template>
-  <div class="publication-item">
+  <div class="publication-item" ref="pubItem">
     <div class="pub-header">
       <span class="pub-venue">[<slot name="venue"></slot>]</span>
       <span class="pub-title"><slot name="title"></slot></span>
@@ -9,7 +9,8 @@
     </div>
     <div class="pub-actions">
       <div class="btn-row">
-        <a :href="link" target="_blank" class="btn-publisher">{{ publisher }}</a>
+        <span class="btn-publisher"><slot name="publisher"></slot></span>
+        <span v-if="hasLinks" class="btn-links"><slot name="link"></slot></span>
         <button @click="showBibtex = !showBibtex" class="btn-bibtex">BibTeX</button>
       </div>
       <div v-if="showBibtex" class="bibtex-content">
@@ -20,14 +21,37 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, useSlots, computed, onMounted } from 'vue'
 
-defineProps<{
-  link: string
-  publisher: string
-}>()
-
+const slots = useSlots()
 const showBibtex = ref(false)
+const pubItem = ref<HTMLElement | null>(null)
+
+// Check if link slot has content
+const hasLinks = computed(() => {
+  if (!slots.link) return false
+  const content = slots.link()
+  return content.some(node => {
+    if (typeof node.children === 'string') {
+      return node.children.trim().length > 0
+    }
+    if (Array.isArray(node.children)) {
+      return node.children.length > 0
+    }
+    return node.children !== null && node.children !== undefined
+  })
+})
+
+// Set target="_blank" on all links after component mounts
+onMounted(() => {
+  if (pubItem.value) {
+    const links = pubItem.value.querySelectorAll('.btn-publisher a, .btn-links a')
+    links.forEach(link => {
+      link.setAttribute('target', '_blank')
+      link.setAttribute('rel', 'noopener noreferrer')
+    })
+  }
+})
 </script>
 
 <style scoped>
@@ -67,7 +91,8 @@ const showBibtex = ref(false)
   align-items: center;
 }
 
-.btn-publisher,
+.btn-publisher :deep(a),
+.btn-links :deep(a),
 .btn-bibtex {
   padding: 4px 12px;
   border: 1px solid var(--vp-c-brand-1);
@@ -80,9 +105,17 @@ const showBibtex = ref(false)
   transition: all 0.2s;
   white-space: nowrap;
   background: transparent;
+  display: inline-block;
 }
 
-.btn-publisher:hover,
+.btn-links {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-publisher :deep(a):hover,
+.btn-links :deep(a):hover,
 .btn-bibtex:hover {
   background: var(--vp-c-brand-1);
   color: white;
