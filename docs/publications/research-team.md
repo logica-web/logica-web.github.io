@@ -1,6 +1,6 @@
 # Research Team
 
-The Logica project is developed and maintained by a dedicated team of researchers and developers passionate about advancing declarative data science and logic programming.
+Logica and its associated projects are developed and maintained by a dedicated team of researchers and engineers committed to advancing the fields of declarative data science and logic programming.
 
 <div class="team-grid">
 
