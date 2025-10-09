@@ -45,12 +45,13 @@ export default defineConfig({
         },
       ],
       '/publications/': [
-        // {
-        //   text: 'References',
-        //   items: [
-        //     { text: 'Overview', link: '/references/' },
-        //   ]
-        // }
+        {
+          // text: 'Publications',
+          items: [
+            { text: 'Publication List', link: '/publications/' },
+            { text: 'Research Team', link: '/publications/research-team' },
+          ]
+        }
       ],
       '/usrguide/': [
         {
