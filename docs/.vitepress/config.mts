@@ -21,16 +21,16 @@ export default defineConfig({
       { text: 'Getting Started', link: '/start/' },
       { text: 'User Guide', link: '/usrguide/' },
       { text: 'Examples', link: '/examples/' },
-      { text: 'Logica+AI', link: '/logica-ai/' },
       { text: 'Publications', link: '/publications/' },
       {
         text: 'More',
         items: [
+          { text: 'Logica+AI <span class="vp-badge-preview">Preview</span>', link: '/logica-ai/' },
           { text: 'Community', link: '/community/' },
-          { text: 'Contributing', link: '/contributing/' }
+          { text: 'Contributing', link: '/contributing/' },
+          { text: 'Playground', link: 'https://logica.dev/sandbox.html' }
         ]
       },
-      { text: 'Playground', link: 'https://logica.dev/sandbox.html' },
     ],
 
     sidebar: {

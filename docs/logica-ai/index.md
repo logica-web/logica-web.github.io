@@ -4,6 +4,10 @@ outline: deep
 
 # Logica + AI
 
+:::warning Under Active Development
+This section is a preview of where Logica is headed with AI integration. Content here may change as these projects evolve.
+:::
+
 Logic programming belongs to the first wave of Artificial Intelligence, characterized by explicit rule-based reasoning. The second wave introduced statistical and machine learning methods, emphasizing data-driven reasoning. We are now entering a third wave centered on large language models (LLMs). Logica seeks to integrate LLMs with logic programming to enhance data science workflows. 
 
 We have three projects under the Logica+AI umbrella:

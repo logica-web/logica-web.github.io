@@ -198,3 +198,19 @@
   margin: 40px 0 24px 0;
   letter-spacing: -0.02em;
 }
+
+/* "Preview" badge on the Logica+AI nav item: calls out the newest use case
+   while signaling that it's still evolving, not a finished feature. */
+.vp-badge-preview {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 7px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: white;
+  background: linear-gradient(120deg, #bd34fe 30%, #3482fa);
+  border-radius: 999px;
+  vertical-align: middle;
+  letter-spacing: 0.02em;
+}
