@@ -199,6 +199,12 @@
   letter-spacing: -0.02em;
 }
 
+/* VitePress hides the footer by default on pages with a sidebar;
+   we want the license/copyright footer on every page. */
+.VPFooter.has-sidebar {
+  display: block !important;
+}
+
 /* "Preview" badge on the Logica+AI nav item: calls out the newest use case
    while signaling that it's still evolving, not a finished feature. */
 .vp-badge-preview {
