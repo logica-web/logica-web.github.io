@@ -11,7 +11,7 @@ Key publications and communications advancing and showcasing Logica.
   <template #title>Logical Robots: Declarative Multi-Agent Programming in Logica</template>
   <template #authors>Evgeny Skvortsov, Yilin Xia, Ojaswa Garg, Shawn Bowers, and Bertram Ludäscher</template>
   <template #publisher>
-    <a href="https://doi.org/10.65109/UKVJ1021">IFAAMAS</a>
+    <a href="https://doi.org/10.65109/UKVJ1021">AAMAS</a>
   </template>
   <template #bibtex>
 

@@ -2,9 +2,10 @@
 
 Contributions to the project are welcome!
 
-If you consider contributing please start a discussion with your proposal, or
-express your willingness to contribute and we will work with you on scoping
-the project to make sure your contribution is accepted as efficiently as possible.
+If you consider contributing please [start a discussion](https://github.com/EvgSkv/logica/discussions)
+with your proposal, or express your willingness to contribute and we will work
+with you on scoping the project to make sure your contribution is accepted as
+efficiently as possible.
 
 
 ## Contributor License Agreement

@@ -6,6 +6,8 @@ The Logica community is a vibrant and collaborative group of data enthusiasts, d
 
 Please bring up your ideas and ask questions in Logica repository discussions: [Discussions](https://github.com/EvgSkv/logica/discussions).
 
+You can also join us on [Discord](https://discord.gg/Uuy3uHer2).
+
 
 ## Contributors
 
