@@ -194,7 +194,7 @@
 .year-header {
   font-size: 2rem;
   font-weight: 700;
-  color: #999;
+  color: var(--vp-c-text-2);
   margin: 40px 0 24px 0;
   letter-spacing: -0.02em;
 }

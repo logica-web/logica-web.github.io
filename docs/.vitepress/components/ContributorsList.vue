@@ -103,7 +103,7 @@ onMounted(fetchContributors)
   padding: 16px;
   border: 2px solid var(--vp-c-brand-1);
   border-radius: 12px;
-  background: white;
+  background: var(--vp-c-bg-soft);
   text-decoration: none;
   color: inherit;
   transition: all .2s ease;
@@ -123,7 +123,7 @@ onMounted(fetchContributors)
   font-weight: 600;
   font-size: 0.9rem;
   text-align: center;
-  color: #333;
+  color: var(--vp-c-text-1);
 }
 .card:hover .login {
   color: white;

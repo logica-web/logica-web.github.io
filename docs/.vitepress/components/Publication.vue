@@ -68,18 +68,18 @@ onMounted(() => {
 
 .pub-venue {
   font-weight: 400;
-  color: #333;
+  color: var(--vp-c-text-1);
 }
 
 .pub-title {
   font-weight: 700;
-  color: #333;
+  color: var(--vp-c-text-1);
   margin-left: 12px;
   font-size: 1.1em;
 }
 
 .pub-authors {
-  color: #666;
+  color: var(--vp-c-text-2);
   margin-top: 4px;
   line-height: 1.5;
 }
