@@ -12,7 +12,3 @@ Please bring up your ideas and ask questions in Logica repository discussions: [
 <ClientOnly>
   <ContributorsList owner="EvgSkv" repo="logica" />
 </ClientOnly>
-
-## Stars
-
-[![Star History Chart](https://api.star-history.com/svg?repos=EvgSkv/logica&type=Date)](https://star-history.com/#EvgSkv/logica&Date)
