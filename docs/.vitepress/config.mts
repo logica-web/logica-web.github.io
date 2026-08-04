@@ -121,18 +121,27 @@ export default defineConfig({
           items: [
             { text: 'Transitive Closure', link: '/examples/tc' },
             { text: 'Same Generation', link: '/examples/sg' },
+            { text: 'Non-Linear Transitive Closure', link: '/examples/nltc' },
+            { text: 'Reachability', link: '/examples/reach' },
           ]
         },
         {
           text: ' Aggregation Queries',
           items: [
             { text: 'Triangle Counting', link: '/examples/triangle' },
+            { text: 'People You May Know', link: '/examples/pymk' },
           ]
         },
         {
           text: ' Aggregation in Recursion',
           items: [
             { text: 'Single Shortest Path', link: '/examples/sssp' },
+            { text: 'Connected Components', link: '/examples/cc' },
+            { text: 'Attend Party', link: '/examples/attend' },
+            { text: 'Multi-Level Marketing Bonus', link: '/examples/mlm' },
+            { text: 'All Pairs Shortest Path', link: '/examples/apsp' },
+            { text: 'PageRank', link: '/examples/pagerank' },
+            { text: 'BOM - Delivery', link: '/examples/bom_delivery' },
           ]
         },
       ],
