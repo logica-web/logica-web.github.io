@@ -4,6 +4,113 @@ Key publications and communications advancing and showcasing Logica.
 
 ## Peer-Reviewed Papers
 
+<div class="year-header">2026</div>
+
+<Publication>
+  <template #venue>AAMAS</template>
+  <template #title>Logical Robots: Declarative Multi-Agent Programming in Logica</template>
+  <template #authors>Evgeny Skvortsov, Yilin Xia, Ojaswa Garg, Shawn Bowers, and Bertram Ludäscher</template>
+  <template #publisher>
+    <a href="https://doi.org/10.65109/UKVJ1021">IFAAMAS</a>
+  </template>
+  <template #bibtex>
+
+```bibtex
+@inproceedings{10.65109/UKVJ1021,
+  author={Skvortsov, Evgeny and Xia, Yilin and Garg, Ojaswa and Bowers, Shawn and Lud{\"a}scher, Bertram},
+  title={Logical Robots: Declarative Multi-Agent Programming in Logica},
+  year={2026},
+  isbn={9798400723179},
+  publisher={International Foundation for Autonomous Agents and Multiagent Systems},
+  address={Richland, SC},
+  url={https://doi.org/10.65109/UKVJ1021},
+  doi={10.65109/UKVJ1021},
+  abstract={We present Logical Robots, an interactive multi-agent simulation platform where autonomous robot behavior is specified declaratively in the logic programming language Logica. Robot behavior is defined by logical predicates that map observations from simulated radar arrays and shared memory to desired motor outputs. This approach allows low-level reactive control and high-level planning to coexist within a single programming environment, providing a coherent framework for exploring multi-agent robot behavior.},
+  booktitle={Proceedings of the 25th International Conference on Autonomous Agents and Multiagent Systems},
+  pages={4137--4139},
+  numpages={3},
+  keywords={logic programming, multi-agent systems, declarative programming, robot simulation},
+  location={Paphos, Cyprus},
+  series={AAMAS '26}
+}
+```
+
+  </template>
+</Publication>
+
+<Publication>
+  <template #venue>ICLP/TPLP</template>
+  <template #title>Diamonds Are Forever: Stabilization Semantics for Unrestricted Aggregation and Recursion in Logica</template>
+  <template #authors>Evgeny Skvortsov, Yilin Xia, Shawn Bowers, Ojaswa Garg, and Bertram Ludäscher</template>
+  <template #bibtex>
+
+```bibtex
+@article{skvortsov2026diamonds,
+  title={Diamonds Are Forever: Stabilization Semantics for Unrestricted Aggregation and Recursion in Logica},
+  journal={Theory and Practice of Logic Programming},
+  author={Skvortsov, Evgeny and Xia, Yilin and Bowers, Shawn and Garg, Ojaswa and Lud{\"a}scher, Bertram},
+  year={2026}
+}
+```
+
+  </template>
+</Publication>
+
+<Publication>
+  <template #venue>PEG@ICLP</template>
+  <template #title>Using Logica to Teach About Parallel Complexity</template>
+  <template #authors>Evgeny Skvortsov, David Warren, Ojaswa Garg, Yilin Xia, Shawn Bowers, and Bertram Ludäscher</template>
+  <template #bibtex>
+
+```bibtex
+@inproceedings{skvortsov2026parallel,
+  title={Using Logica to Teach About Parallel Complexity},
+  author={Skvortsov, Evgeny and Warren, David and Garg, Ojaswa and Xia, Yilin and Bowers, Shawn and Lud{\"a}scher, Bertram},
+  booktitle={PEG Workshop at ICLP 2026},
+  year={2026}
+}
+```
+
+  </template>
+</Publication>
+
+<Publication>
+  <template #venue>PEG@ICLP</template>
+  <template #title>Embodied Declarative Logic: Learning Logica via Orchestrating Robot Behavior</template>
+  <template #authors>Evgeny Skvortsov, Ojaswa Garg, Yilin Xia, Shawn Bowers, and Bertram Ludäscher</template>
+  <template #bibtex>
+
+```bibtex
+@inproceedings{skvortsov2026embodied,
+  title={Embodied Declarative Logic: Learning Logica via Orchestrating Robot Behavior},
+  author={Skvortsov, Evgeny and Garg, Ojaswa and Xia, Yilin and Bowers, Shawn and Lud{\"a}scher, Bertram},
+  booktitle={PEG Workshop at ICLP 2026},
+  year={2026}
+}
+```
+
+  </template>
+</Publication>
+
+<Publication>
+  <template #venue>ASPOCP</template>
+  <template #title>Between Two Worlds: Logica Intertwines ASP and SQL</template>
+  <template #authors>Evgeny Skvortsov, Shawn Bowers, Yilin Xia, Ojaswa Garg, and Bertram Ludäscher</template>
+  <template #bibtex>
+
+```bibtex
+@inproceedings{skvortsov2026aspocp,
+  title={Between Two Worlds: Logica Intertwines ASP and SQL},
+  author={Skvortsov, Evgeny and Bowers, Shawn and Xia, Yilin and Garg, Ojaswa and Lud{\"a}scher, Bertram},
+  booktitle={ASPOCP Workshop at ICLP 2026},
+  note={Abstract},
+  year={2026}
+}
+```
+
+  </template>
+</Publication>
+
 <div class="year-header">2025</div>
 
 <Publication>

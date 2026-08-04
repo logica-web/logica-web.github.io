@@ -9,7 +9,7 @@
     </div>
     <div class="pub-actions">
       <div class="btn-row">
-        <span class="btn-publisher"><slot name="publisher"></slot></span>
+        <span v-if="hasPublisher" class="btn-publisher"><slot name="publisher"></slot></span>
         <span v-if="hasLinks" class="btn-links"><slot name="link"></slot></span>
         <button @click="showBibtex = !showBibtex" class="btn-bibtex">BibTeX</button>
       </div>
@@ -27,10 +27,10 @@ const slots = useSlots()
 const showBibtex = ref(false)
 const pubItem = ref<HTMLElement | null>(null)
 
-// Check if link slot has content
-const hasLinks = computed(() => {
-  if (!slots.link) return false
-  const content = slots.link()
+// Check if a slot has content
+function slotHasContent(slot: (() => any[]) | undefined) {
+  if (!slot) return false
+  const content = slot()
   return content.some(node => {
     if (typeof node.children === 'string') {
       return node.children.trim().length > 0
@@ -40,7 +40,10 @@ const hasLinks = computed(() => {
     }
     return node.children !== null && node.children !== undefined
   })
-})
+}
+
+const hasLinks = computed(() => slotHasContent(slots.link))
+const hasPublisher = computed(() => slotHasContent(slots.publisher))
 
 // Set target="_blank" on all links after component mounts
 onMounted(() => {
