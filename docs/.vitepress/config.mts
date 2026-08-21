@@ -4,7 +4,14 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Logica",
   description: "Logic Programming Language for Data Analysis",
-  head: [['link', { rel: 'icon', href: '/logica_favicon.ico' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/logica_favicon.ico' }],
+    ['script', {
+      src: 'https://context7.com/widget.js',
+      'data-library': '/evgskv/logica',
+      'data-color': '#3482fa'
+    }]
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: {
